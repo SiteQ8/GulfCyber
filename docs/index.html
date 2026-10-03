@@ -93,6 +93,10 @@ details li small{color:var(--muted)}
 footer{background:var(--blue);color:rgba(255,255,255,.85);padding:30px 0;border-top:3px solid var(--gold);font-size:15px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer a{color:var(--gold);text-decoration:none}
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(14,42,71,.97);border-top:2px solid var(--gold);padding:9px 12px;gap:10px;backdrop-filter:blur(6px)}
+.mobile-bar a,.mobile-bar span{flex:1;text-align:center;padding:11px 8px;border-radius:10px;font-weight:700;font-size:14.5px;text-decoration:none}
+.mobile-bar .gold{background:var(--gold);color:var(--blue)}
+.mobile-bar .soon{background:rgba(255,255,255,.12);color:#fff}
 @media (max-width:860px){
   .parts{grid-template-columns:1fr}
   .hero .wrap{grid-template-columns:1fr;padding:50px 22px 60px;text-align:center}
@@ -103,10 +107,20 @@ footer a{color:var(--gold);text-decoration:none}
   .stats .wrap{grid-template-columns:repeat(2,1fr);gap:16px}
   .author{grid-template-columns:1fr}
   .chapter-structure ol{columns:1}
-  header .wrap{height:auto;min-height:56px;flex-wrap:wrap;padding:8px 16px;gap:4px 8px}
-  .brand{font-size:14px;width:100%}
-  nav{width:100%;justify-content:flex-start;gap:2px}
-  nav a{padding:4px 8px;font-size:13px}
+  header .wrap{height:auto;min-height:0;flex-direction:column;align-items:center;padding:9px 10px 7px;gap:5px}
+  .brand{font-size:15px;width:100%;text-align:center;white-space:normal;line-height:1.35}
+  nav{width:100%;justify-content:center;flex-wrap:nowrap;overflow-x:auto;gap:0;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{padding:4px 9px;font-size:13.5px;white-space:nowrap;opacity:1}
+  .hero .wrap{padding:36px 18px 44px}
+  .hero h1{font-size:31px}
+  .hero h2{font-size:19px}
+  .hero p{font-size:17px}
+  .cta{flex-direction:column;align-items:stretch;gap:10px}
+  .btn{justify-content:center}
+  .cover img{width:230px;transform:none}
+  body{padding-bottom:74px}
+  .mobile-bar{display:flex}
 }
 </style>
 </head>
@@ -282,6 +296,10 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+<div class="mobile-bar">
+  <a class="gold" href="samples/chapter-1.pdf">الفصل الأول مجاناً</a>
+  <span class="soon" id="buy-mobile">قريباً على أمازون</span>
+</div>
 <footer>
   <div class="wrap">
     <div>© 2026 علي العنزي، جميع الحقوق محفوظة</div>
@@ -292,7 +310,8 @@ footer a{color:var(--gold);text-decoration:none}
 (function(){
   var buy=document.getElementById('buy');
   var link=buy.getAttribute('data-amazon');
-  if(link){var a=document.createElement('a');a.className='btn gold';a.href=link;a.textContent='اشترِ من أمازون';buy.replaceWith(a);}
+  if(link){var a=document.createElement('a');a.className='btn gold';a.href=link;a.textContent='اشترِ من أمازون';buy.replaceWith(a);
+    var m=document.getElementById('buy-mobile');if(m){var b=document.createElement('a');b.className='gold';b.href=link;b.textContent='اشترِ من أمازون';m.replaceWith(b);}}
 })();
 </script>
 </body>
