@@ -23,7 +23,7 @@ BLURB = [
     "تسعة عشر فصلاً في أربعة أبواب تتدرج من الأسس إلى الآفاق، يبدأ كل فصل بأهداف تعلم ويُختم بأخطاء شائعة وقائمة تحقق وخلاصة وجدول مصطلحات وخريطة إلى الأطر الدولية والخليجية وأسئلة وتمارين ومصادر، مع ثلاثة وعشرين شكلاً ودراسات حالة من واقع المنطقة، وملاحق فيها قائمة تحقق للمؤسسة الصغيرة ومسرد يضم أكثر من مئتي مصطلح.",
     "يضع الكتاب إطار بنك الكويت المركزي الجديد والضوابط الأساسية السعودية ومعيار ضمان المعلومات في قطر وقوانين حماية البيانات في الدول الست في موضعها من كل فصل، ويرافقه موقع فيه فصل مجاني ومستودع مفتوح بالتدريبات والقوالب والأشكال.",
 ]
-BIO = "علي العنزي مهندس وقيادي في أمن المعلومات، يقود أعمال هندسة الأمن في أكبر مؤسسة مالية في الكويت ويرأس لجنة الأمن السيبراني في اتحاد مصارف الكويت."
+BIO = "علي العنزي مهندس وقيادي في أمن المعلومات، يقود أعمال هندسة الأمن في إحدى كبرى المؤسسات المالية في الكويت، ويرأس لجاناً لمخاطر الأمن السيبراني في القطاع المالي في الكويت والخليج، وهو عضو مجلس إدارة سابق في إحدى كبرى شركات تكنولوجيا المعلومات في الكويت."
 
 
 def data_uri(path, mime):
@@ -74,7 +74,7 @@ def ean13_svg(code, width_in=1.9, height_in=0.95):
     return "".join(out)
 
 
-def qr_svg(text, size_in=0.95):
+def qr_svg(text, size_in=1.16):
     import qrcode
     q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=1)
     q.add_data(text)
@@ -129,8 +129,9 @@ html, body {{ margin:0; padding:0; width:{total_w}in; height:{total_h}in; font-f
 .bio img {{ width:0.85in; height:0.85in; border-radius:50%; object-fit:cover; border:2px solid #D4A72C; flex:none; }}
 .barcode {{ position:absolute; right:0.45in; bottom:0.45in; width:2.05in; height:1.32in; background:#fff; border-radius:0.04in; display:flex; flex-direction:column; align-items:center; justify-content:center; }}
 .barcode .isbn {{ font-family:"Noto Sans", sans-serif; font-size:0.1in; color:#000; direction:ltr; margin-bottom:0.02in; }}
-.qr {{ position:absolute; left:{BLEED + 0.55}in; bottom:0.45in; display:flex; align-items:center; gap:0.14in; color:#F4EBD0; font-size:0.12in; line-height:1.6; }}
-.qr img {{ width:1.0in; height:1.0in; background:#fff; padding:0.04in; border-radius:0.04in; }}
+.qr {{ position:absolute; left:{BLEED + 0.55}in; right:2.75in; bottom:0.45in; display:flex; direction:ltr; align-items:center; gap:0.18in; color:#F4EBD0; font-size:0.125in; line-height:1.6; }}
+.qr div {{ direction:rtl; text-align:right; }}
+.qr img {{ width:1.32in; height:1.32in; background:#fff; padding:0.08in; box-sizing:border-box; border-radius:0.04in; }}
 .backmap {{ position:absolute; right:-1.2in; bottom:0.6in; width:4.2in; opacity:.14; }}
 </style></head><body><div class="wrap">
 <div class="panel front">
