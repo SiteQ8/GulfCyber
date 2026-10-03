@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المرجع الخليجي الشامل في الأمن السيبراني | كتاب من الخليج إلى الخليج</title>
+<meta name="description" content="كتاب عربي شامل في أمن المعلومات والأمن السيبراني للجامعات والجهات الحكومية والممارسين في دول الخليج، بأهداف تعلم وأشكال وتمارين وخرائط إلى الأطر الخليجية والدولية.">
+<link rel="canonical" href="https://gulfcyber.3li.info/">
+<meta property="og:type" content="book">
+<meta property="og:title" content="المرجع الخليجي الشامل في الأمن السيبراني">
+<meta property="og:description" content="الأسس والضوابط والعمليات والتنظيم، كتاب من الخليج إلى الخليج للجامعات والحكومات والممارسين.">
+<meta property="og:image" content="https://gulfcyber.3li.info/assets/og.jpg">
+<meta property="og:url" content="https://gulfcyber.3li.info/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E2A47'/%3E%3Ccircle cx='32' cy='30' r='14' fill='none' stroke='%23D4A72C' stroke-width='5'/%3E%3Crect x='28' y='30' width='8' height='18' rx='3' fill='%23D4A72C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Book","name":"المرجع الخليجي الشامل في الأمن السيبراني","alternativeHeadline":"الأسس والضوابط والعمليات والتنظيم","author":{"@type":"Person","name":"علي العنزي","url":"https://3li.info"},"inLanguage":"ar","image":"https://gulfcyber.3li.info/assets/cover.jpg","url":"https://gulfcyber.3li.info/","genre":"أمن المعلومات","datePublished":"2026"}
+</script>
+<style>
+:root{--blue:#0E2A47;--blue2:#163B63;--gold:#D4A72C;--gold2:#9A7A1E;--teal:#2A9D8F;--cream:#F6F1E7;--ink:#111826;--muted:#5B6678;--line:#E3DCCB;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;color:var(--ink);background:var(--cream);line-height:1.8;font-size:17px}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:20;background:rgba(14,42,71,.96);backdrop-filter:saturate(1.2) blur(6px);color:#fff;border-bottom:3px solid var(--gold)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:700;letter-spacing:0;font-size:16px;white-space:nowrap}
+.brand span{color:var(--gold)}
+nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+nav a{text-decoration:none;padding:8px 12px;border-radius:8px;font-size:15px;opacity:.92}
+nav a:hover{background:rgba(255,255,255,.1);opacity:1}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 55% 40%,var(--blue2),var(--blue) 70%);color:#fff}
+.hero .map{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:20% 35%;opacity:.3;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:70px 22px 80px}
+.hero h1{font-size:46px;line-height:1.3;margin:0 0 10px;font-weight:700}
+.hero h2{font-size:22px;font-weight:500;color:var(--gold);margin:0 0 18px}
+.hero p{font-size:19px;max-width:560px;opacity:.95}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;text-decoration:none;font-weight:600;font-size:16px;border:2px solid transparent;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.btn.gold{background:var(--gold);color:var(--blue)}
+.btn.ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn.soon{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2);cursor:default}
+.btn.soon:hover{transform:none;box-shadow:none}
+.cover{justify-self:center;position:relative}
+.cover img{width:340px;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);transform:rotate(-3deg)}
+.cover::after{content:"";position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(212,167,44,.25),transparent 65%);z-index:-1}
+.stats{background:var(--blue);color:#fff;border-top:1px solid rgba(255,255,255,.12)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding:22px}
+.stats b{display:block;font-size:30px;color:var(--gold)}
+.stats span{font-size:15px;opacity:.9}
+section{padding:70px 0}
+section h2.t{font-size:32px;margin:0 0 8px;color:var(--blue)}
+section p.lead{margin:0 0 36px;color:var(--muted);font-size:18px;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 2px 0 var(--line)}
+.card h3{margin:0 0 8px;font-size:19px;color:var(--blue)}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.card .ic{width:44px;height:44px;border-radius:12px;background:var(--blue);display:grid;place-items:center;margin-bottom:14px}
+.card .ic svg{width:24px;height:24px}
+.parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:700;color:var(--blue);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#fff,#faf7f0)}
+summary::-webkit-details-marker{display:none}
+summary .n{width:34px;height:34px;border-radius:10px;background:var(--gold);color:var(--blue);display:grid;place-items:center;font-size:15px;margin-left:12px}
+summary .cap{font-size:13px;color:var(--muted);font-weight:500}
+details ol{margin:0;padding:6px 44px 18px 20px;color:var(--ink)}
+details li{padding:5px 0;border-top:1px dashed var(--line)}
+details li small{color:var(--muted)}
+.chapter-structure{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:28px}
+.chapter-structure ol{columns:2;gap:40px;margin:0;padding-right:20px}
+.labs{background:var(--blue);color:#fff}
+.labs h2.t,.labs .lead{color:#fff}
+.labs .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);box-shadow:none}
+.labs .card h3{color:var(--gold)}
+.labs .card p{color:rgba(255,255,255,.85)}
+.labs .card code{background:rgba(255,255,255,.12);padding:2px 6px;border-radius:6px;font-size:14px;direction:ltr;display:inline-block}
+.author{display:grid;grid-template-columns:1fr 1.6fr;gap:40px;align-items:center}
+.author .badge{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;text-align:center}
+.author .badge .big{font-size:60px;line-height:1;color:var(--gold)}
+.author .badge b{display:block;font-size:22px;margin-top:10px;color:var(--blue)}
+.author .badge a{color:var(--gold2);text-decoration:none;font-weight:600}
+.en{direction:ltr;text-align:left;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;font-family:"IBM Plex Sans Arabic",system-ui,sans-serif}
+.en h2{margin:0 0 10px;color:var(--blue);font-size:24px}
+.en p{margin:0 0 10px;color:var(--muted)}
+footer{background:var(--blue);color:rgba(255,255,255,.85);padding:30px 0;border-top:3px solid var(--gold);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{color:var(--gold);text-decoration:none}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;padding:50px 22px 60px;text-align:center}
+  .hero p{margin:0 auto}
+  .cta{justify-content:center}
+  .cover img{width:260px}
+  .hero h1{font-size:34px}
+  .stats .wrap{grid-template-columns:repeat(2,1fr);gap:16px}
+  .author{grid-template-columns:1fr}
+  .chapter-structure ol{columns:1}
+  header .wrap{height:auto;min-height:56px;flex-wrap:wrap;padding:8px 16px;gap:4px 8px}
+  .brand{font-size:14px;width:100%}
+  nav{width:100%;justify-content:flex-start;gap:2px}
+  nav a{padding:4px 8px;font-size:13px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">المرجع <span>الخليجي</span> الشامل في الأمن السيبراني</div>
+    <nav>
+      <a href="#why">لماذا</a>
+      <a href="#contents">المحتويات</a>
+      <a href="#labs">التدريبات</a>
+      <a href="#author">المؤلف</a>
+      <a href="samples/chapter-1.pdf">عينة مجانية</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="map" src="assets/gulf-map.svg" alt="">
+  <div class="wrap">
+    <div>
+      <h1>المرجع الخليجي الشامل في الأمن السيبراني</h1>
+      <h2>الأسس والضوابط والعمليات والتنظيم</h2>
+      <p>كتاب عربي من الخليج إلى الخليج، يجمع الأساس النظري والممارسة العملية والسياق التنظيمي لدول المجلس في مرجع واحد يصلح للمقرر الجامعي ولبرامج التأهيل الحكومية وللممارس في الميدان.</p>
+      <div class="cta">
+        <a class="btn gold" href="samples/chapter-1.pdf">حمّل الفصل الأول مجاناً</a>
+        <a class="btn ghost" href="https://github.com/SiteQ8/GulfCyber">التدريبات على GitHub</a>
+        <span class="btn soon" id="buy">قريباً على أمازون</span>
+      </div>
+    </div>
+    <div class="cover"><img src="assets/cover.jpg" alt="غلاف الكتاب"></div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div><b>18</b><span>فصلاً في أربعة أبواب</span></div>
+    <div><b>6</b><span>دول يغطي أطرها وقوانينها</span></div>
+    <div><b>12</b><span>شكلاً توضيحياً</span></div>
+    <div><b>54</b><span>تمريناً تطبيقياً</span></div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <h2 class="t">لماذا هذا الكتاب</h2>
+    <p class="lead">المراجع الأجنبية غزيرة لكنها تخاطب واقعاً آخر، والمحتوى العربي متناثر، وهذا الكتاب يضع المجال كله في سياق المنطقة ومصطلحها وأطرها.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A72C" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div>
+        <h3>من الخليج إلى الخليج</h3>
+        <p>إطار بنك الكويت المركزي الجديد والضوابط السعودية ومعيار قطر وقوانين الخصوصية الخليجية في موضعها من كل فصل، لا في ملحق منسي.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A72C" stroke-width="2"><path d="M4 19V5a2 2 0 012-2h12v16H6a2 2 0 00-2 2zm0 0a2 2 0 002 2h12"/></svg></div>
+        <h3>للجامعات</h3>
+        <p>كل فصل يبدأ بأهداف تعلم ويُختم بخلاصة وجدول مصطلحات وأسئلة مراجعة وتمارين تصلح للمحاضرة والورشة والتقييم.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A72C" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>للجهات الحكومية</h3>
+        <p>الحوكمة والامتثال والمرونة التشغيلية وحماية البنية التحتية الحيوية بلغة تخاطب صانع القرار والمهندس معاً.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#D4A72C" stroke-width="2"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.4 2.4-2-2z"/></svg></div>
+        <h3>للممارس</h3>
+        <p>ضوابط عملية مجربة ونتائج التقييمات المتكررة في مؤسسات المنطقة وما يُسأل عنه المدققون والجهات المنظمة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contents" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="t">محتويات الكتاب</h2>
+    <p class="lead">أربعة أبواب تتدرج من الأسس إلى الآفاق، ويُقرأ كل فصل مستقلاً مع إحالات إلى ما يرتبط به.</p>
+    <div class="parts">
+      <details open>
+        <summary><span><span class="n">١</span>الأسس</span><span class="cap">4 فصول</span></summary>
+        <ol>
+          <li>مدخل إلى أمن المعلومات</li>
+          <li>التهديدات والمهاجمون</li>
+          <li>إدارة المخاطر</li>
+          <li>الحوكمة والسياسات والأطر والامتثال</li>
+        </ol>
+      </details>
+      <details open>
+        <summary><span><span class="n">٢</span>الضوابط التقنية</span><span class="cap">8 فصول</span></summary>
+        <ol start="5">
+          <li>التشفير</li>
+          <li>الهوية والمصادقة وإدارة الصلاحيات</li>
+          <li>أمن الشبكات</li>
+          <li>أمن الأنظمة ونقاط النهاية</li>
+          <li>أمن التطبيقات والتطوير الآمن</li>
+          <li>أمن الحوسبة السحابية</li>
+          <li>أمن البيانات والخصوصية</li>
+          <li>أمن الأنظمة الصناعية وإنترنت الأشياء</li>
+        </ol>
+      </details>
+      <details>
+        <summary><span><span class="n">٣</span>العمليات والصمود</span><span class="cap">4 فصول</span></summary>
+        <ol start="13">
+          <li>مراقبة الأمن والعمليات الأمنية</li>
+          <li>الاستجابة للحوادث والتحقيق الرقمي</li>
+          <li>استمرارية الأعمال والتعافي من الكوارث</li>
+          <li>العنصر البشري والتوعية الأمنية</li>
+        </ol>
+      </details>
+      <details>
+        <summary><span><span class="n">٤</span>آفاق</span><span class="cap">فصلان وملاحق</span></summary>
+        <ol start="17">
+          <li>الذكاء الاصطناعي وأمن المعلومات</li>
+          <li>المسيرة المهنية في أمن المعلومات</li>
+          <li>مسرد المصطلحات عربي إنجليزي <small>ملحق</small></li>
+          <li>قائمة تحقق للمؤسسة الصغيرة والمتوسطة <small>ملحق</small></li>
+        </ol>
+      </details>
+    </div>
+    <div class="chapter-structure">
+      <h3 style="margin:0 0 10px;color:var(--blue)">بنية كل فصل</h3>
+      <ol>
+        <li>صندوق أهداف التعلم</li>
+        <li>مقدمة تربط الموضوع بالواقع</li>
+        <li>الأقسام مع شكل توضيحي وأمثلة ودراسات حالة</li>
+        <li>خلاصة الفصل</li>
+        <li>جدول المصطلحات بالعربية والإنجليزية</li>
+        <li>خريطة إلى الأطر الدولية والخليجية</li>
+        <li>أسئلة للمراجعة</li>
+        <li>تمارين تطبيقية</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="labs" class="labs">
+  <div class="wrap">
+    <h2 class="t">التدريبات التطبيقية</h2>
+    <p class="lead">تمارين كل فصل مع قوالب وبيانات عينة في مستودع مفتوح، تعمل عليها بنفسك أو تعتمدها في مقررك.</p>
+    <div class="grid">
+      <div class="card"><h3>سجل مخاطر</h3><p>قالب سجل المخاطر بالحقول الواردة في الفصل الثالث مع سيناريو مكتمل تبني عليه.</p><p><code>labs/ch03</code></p></div>
+      <div class="card"><h3>قواعد جدار ناري</h3><p>عشرون قاعدة حقيقية الشكل، صنف ما له مالك وسبب وما يجب حذفه كما في الفصل السابع.</p><p><code>labs/ch07</code></p></div>
+      <div class="card"><h3>ترتيب الثغرات</h3><p>ست ثغرات بمعطيات الشدة والاستغلال والتعرض، رتبها وحدد المهل وفق الفصل الثامن.</p><p><code>labs/ch08</code></p></div>
+      <div class="card"><h3>نموذج بيردو</h3><p>ورقة عمل لمحطة تحلية افتراضية، املأ المناطق والقنوات ومستويات الأمن كما في الفصل الثاني عشر.</p><p><code>labs/ch12</code></p></div>
+    </div>
+    <div class="cta"><a class="btn gold" href="https://github.com/SiteQ8/GulfCyber/tree/main/labs">افتح التدريبات على GitHub</a></div>
+  </div>
+</section>
+
+<section id="author">
+  <div class="wrap author">
+    <div class="badge">
+      <div class="big">ع</div>
+      <b>علي العنزي</b>
+      <a href="https://3li.info">3li.info</a>
+    </div>
+    <div>
+      <h2 class="t">عن المؤلف</h2>
+      <p>مهندس وقيادي في أمن المعلومات، يقود أعمال هندسة الأمن في أكبر مؤسسة مالية في الكويت، ويرأس لجنة الأمن السيبراني في اتحاد مصارف الكويت، وتمتد خبرته إلى هندسة أمن الحوسبة السحابية وأطر الامتثال والأمن الهجومي، ويحمل درجتي ماجستير من جامعة الكويت وعدداً من الشهادات المهنية المتخصصة، ويطور وينشر أدوات مفتوحة المصدر في أمن المعلومات تخدم منطقة الخليج.</p>
+      <p style="color:var(--muted)">للتواصل والاستفسار عن اعتماد الكتاب في المقررات والبرامج التدريبية: <a href="mailto:info@3li.info" style="color:var(--gold2);text-decoration:none;font-weight:600">info@3li.info</a></p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="en">
+      <h2>About the book</h2>
+      <p>A comprehensive Arabic reference on information security and cybersecurity written from the Gulf for the Gulf. It covers foundations, technical controls, operations and resilience, and emerging topics, and places the GCC regulatory landscape, including the Central Bank of Kuwait framework, the Saudi national controls, the Qatar standard and the regional privacy laws, inside every chapter rather than in an appendix.</p>
+      <p>Each chapter opens with learning objectives and closes with a summary, an Arabic and English glossary, a map to international and Gulf frameworks, review questions and hands-on exercises, which makes it suitable for university courses and government training programs. Companion labs and figures are open source on GitHub.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 علي العنزي، جميع الحقوق محفوظة</div>
+    <div><a href="https://3li.info">3li.info</a> | <a href="https://github.com/SiteQ8/GulfCyber">GitHub</a> | <a href="mailto:info@3li.info">info@3li.info</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var buy=document.getElementById('buy');
+  var link=buy.getAttribute('data-amazon');
+  if(link){var a=document.createElement('a');a.className='btn gold';a.href=link;a.textContent='اشترِ من أمازون';buy.replaceWith(a);}
+})();
+</script>
+</body>
+</html>
