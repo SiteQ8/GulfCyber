@@ -118,6 +118,27 @@ def layers(rows, pyramid=False):
     return "".join(body)
 
 
+def columns(cols, header_fill=BLUE):
+    """أعمدة من اليمين إلى اليسار لكل عمود عنوان وعناصر، تصلح للمناطق والأركان."""
+    n = len(cols)
+    margin, gap = 30, 18
+    cw = (W - 2 * margin - gap * (n - 1)) / n
+    col_h = 150 + max(len(c[1]) for c in cols) * 76 + 10
+    body = []
+    for i, (title, items, fill) in enumerate(cols):
+        x = W - margin - cw - i * (cw + gap)
+        body.append(f'<rect x="{x}" y="40" width="{cw}" height="{col_h}" rx="16" fill="{LIGHT}" stroke="#C9D2DE" stroke-width="2"/>')
+        body.append(f'<rect x="{x}" y="40" width="{cw}" height="78" rx="16" fill="{fill}"/>')
+        body.append(f'<rect x="{x}" y="96" width="{cw}" height="22" fill="{fill}"/>')
+        body.append(wrapped(x + cw / 2, 88, title, 24, "#FFFFFF", max_chars=int(cw / 13)))
+        y = 150
+        for item in items:
+            body.append(f'<rect x="{x+12}" y="{y}" width="{cw-24}" height="64" rx="10" fill="#FFFFFF" stroke="#C9D2DE" stroke-width="1.5"/>')
+            body.append(wrapped(x + cw / 2, y + 40, item, 20, INK, max_chars=int(cw / 11), weight="normal"))
+            y += 76
+    return "".join(body), col_h + 80
+
+
 def triangle(labels, center):
     cx, cy = W / 2, H / 2 + 20
     r = 250
@@ -166,6 +187,29 @@ FIGURES = {
                                    ("الأمن الهجومي: مختبر الاختراق والفريق الأحمر وباحث الثغرات", TEAL),
                                    ("الحوكمة والمخاطر والامتثال: المحلل والمدقق ومسؤول الامتثال وحماية البيانات", BLUE2),
                                    ("أمن التطبيقات والتخصصات الناشئة: التطوير الآمن والأنظمة الصناعية والذكاء الاصطناعي", BLUE)]),
+    "f19-archlayers": lambda: layers([("السياقية: ماذا تحتاج الأعمال من الأمن", "#5C6B7A"),
+                                      ("المفاهيمية: المبادئ والاستراتيجية", BLUE2),
+                                      ("المنطقية: الخدمات الأمنية كالهوية والتشفير والمراقبة", BLUE),
+                                      ("الفيزيائية: الآليات التي تقدم كل خدمة", BLUE2),
+                                      ("المكونات: المنتجات والإعدادات", BLUE),
+                                      ("التشغيل: إدارة ذلك كله وقياسه", TEAL)], pyramid=True),
+    "f20-reference": lambda: columns([("الحافة والإنترنت", ["الحماية من حجب الخدمة", "جدار تطبيقات الويب", "بوابة الوصول بانعدام الثقة"], "#5C6B7A"),
+                                      ("المنطقة الوسيطة", ["بوابة الواجهات", "خوادم الويب", "وسطاء التكامل"], BLUE2),
+                                      ("التطبيقات", ["الخدمات الداخلية", "الأنظمة الأساسية", "خوادم القفز للإدارة"], BLUE),
+                                      ("البيانات", ["قواعد البيانات المشفرة", "خزنة الترميز", "النسخ غير القابلة للتعديل"], TEAL),
+                                      ("الخدمات المشتركة", ["مزود الهوية", "خزنة الأسرار والمفاتيح", "المراقبة المركزية"], GOLD)]),
+    "f21-zerotrust": lambda: columns([("الهوية", ["مصادقة مقاومة للتصيد", "الامتياز الأدنى", "مراجعات الوصول"], BLUE),
+                                      ("الأجهزة", ["جرد وحالة صحية", "كشف واستجابة", "الامتثال شرط للوصول"], BLUE2),
+                                      ("الشبكة", ["تجزئة دقيقة", "تشفير كل اتصال", "لا ثقة بالموقع"], BLUE),
+                                      ("التطبيقات", ["وصول عبر وسيط", "مصادقة لكل طلب", "تسجيل كامل"], BLUE2),
+                                      ("البيانات", ["تصنيف", "تشفير وترميز", "منع التسريب"], TEAL),
+                                      ("القرار والإنفاذ", ["نقطة قرار السياسة", "نقاط الإنفاذ عند كل مورد", "رؤية وأتمتة"], GOLD)]),
+    "f22-landingzone": lambda: columns([("حسابات الأساس", ["الإدارة", "التسجيل المحمي", "الأمن والأدوات"], GOLD),
+                                        ("الشبكة", ["محور فيه الجدران والفحص", "أطراف لكل بيئة", "وصلات خاصة مع المركز"], BLUE),
+                                        ("الهوية", ["اتحاد مع مزود المؤسسة", "أدوار بأقل صلاحية", "لا مفاتيح ثابتة"], BLUE2),
+                                        ("الحواجز", ["سياسة كشفرة", "منع الموارد المخالفة", "تشفير وتسجيل إلزاميان"], TEAL),
+                                        ("حسابات الأعمال", ["الإنتاج", "الاختبار", "التطوير"], "#5C6B7A")]),
+    "f23-review": lambda: chain(["الاستقبال والتصنيف", "المعمارية عالية المستوى", "التصميم التفصيلي", "قائمة المكونات", "نمذجة التهديدات", "ربط الضوابط بالأطر", "قرار المخاطر", "التحقق بعد البناء"]),
     "f12-purdue": lambda: layers([("المستويان الرابع والخامس: شبكة المؤسسة والإنترنت", "#5C6B7A"),
                                   ("المنطقة منزوعة السلاح الصناعية: لا اتصال مباشر يتجاوزها", GOLD),
                                   ("المستوى الثالث: إدارة العمليات في الموقع", BLUE2),
@@ -175,15 +219,15 @@ FIGURES = {
 }
 
 
-def render(svg_path, png_path):
+def render(svg_path, png_path, h=H):
     script = f"""
 const {{ chromium }} = require('playwright');
 (async () => {{
   const browser = await chromium.launch({{ executablePath: process.env.PW_CHROME || undefined, args: ['--no-sandbox'] }});
-  const page = await browser.newPage({{ viewport: {{ width: {W}, height: {H} }}, deviceScaleFactor: 2 }});
+  const page = await browser.newPage({{ viewport: {{ width: {W}, height: {h} }}, deviceScaleFactor: 2 }});
   await page.goto('file://{svg_path}');
   await page.waitForTimeout(300);
-  await page.screenshot({{ path: '{png_path}', clip: {{ x: 0, y: 0, width: {W}, height: {H} }} }});
+  await page.screenshot({{ path: '{png_path}', clip: {{ x: 0, y: 0, width: {W}, height: {h} }} }});
   await browser.close();
 }})();
 """
@@ -194,10 +238,11 @@ def main(argv):
     OUT.mkdir(exist_ok=True)
     names = [n for n in FIGURES if not argv or any(n.startswith(a) for a in argv)]
     for name in names:
-        body = FIGURES[name]()
+        result = FIGURES[name]()
+        body, h = result if isinstance(result, tuple) else (result, H)
         svg_path = OUT / f"{name}.svg"
-        svg_path.write_text(svg(body), encoding="utf-8")
-        render(svg_path, OUT / f"{name}.png")
+        svg_path.write_text(svg(body, h=h), encoding="utf-8")
+        render(svg_path, OUT / f"{name}.png", h)
         print("wrote", name)
 
 
