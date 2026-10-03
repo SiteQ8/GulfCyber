@@ -63,14 +63,16 @@ section p.lead{margin:0 0 36px;color:var(--muted);font-size:18px;max-width:760px
 .card p{margin:0;color:var(--muted);font-size:16px}
 .card .ic{width:44px;height:44px;border-radius:12px;background:var(--blue);display:grid;place-items:center;margin-bottom:14px}
 .card .ic svg{width:24px;height:24px}
-.parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.parts{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0;overflow:hidden}
 summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:700;color:var(--blue);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#fff,#faf7f0)}
 summary::-webkit-details-marker{display:none}
 summary .n{width:34px;height:34px;border-radius:10px;background:var(--gold);color:var(--blue);display:grid;place-items:center;font-size:15px;margin-left:12px}
 summary .cap{font-size:13px;color:var(--muted);font-weight:500}
 details ol{margin:0;padding:6px 44px 18px 20px;color:var(--ink)}
-details li{padding:5px 0;border-top:1px dashed var(--line)}
+details li{padding:7px 0;border-top:1px dashed var(--line)}
+details li b{display:block;color:var(--blue)}
+details li span{color:var(--muted);font-size:14.5px;line-height:1.6;display:block}
 details li small{color:var(--muted)}
 .chapter-structure{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:28px}
 .chapter-structure ol{columns:2;gap:40px;margin:0;padding-right:20px}
@@ -92,6 +94,7 @@ footer{background:var(--blue);color:rgba(255,255,255,.85);padding:30px 0;border-
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer a{color:var(--gold);text-decoration:none}
 @media (max-width:860px){
+  .parts{grid-template-columns:1fr}
   .hero .wrap{grid-template-columns:1fr;padding:50px 22px 60px;text-align:center}
   .hero p{margin:0 auto}
   .cta{justify-content:center}
@@ -142,8 +145,8 @@ footer a{color:var(--gold);text-decoration:none}
   <div class="wrap">
     <div><b>18</b><span>فصلاً في أربعة أبواب</span></div>
     <div><b>6</b><span>دول يغطي أطرها وقوانينها</span></div>
-    <div><b>12</b><span>شكلاً توضيحياً</span></div>
-    <div><b>54</b><span>تمريناً تطبيقياً</span></div>
+    <div><b>18</b><span>شكلاً توضيحياً ودراسات حالة</span></div>
+    <div><b>190+</b><span>مصطلحاً في المسرد و54 تمريناً</span></div>
   </div>
 </div>
 
@@ -184,41 +187,40 @@ footer a{color:var(--gold);text-decoration:none}
       <details open>
         <summary><span><span class="n">١</span>الأسس</span><span class="cap">4 فصول</span></summary>
         <ol>
-          <li>مدخل إلى أمن المعلومات</li>
-          <li>التهديدات والمهاجمون</li>
-          <li>إدارة المخاطر</li>
-          <li>الحوكمة والسياسات والأطر والامتثال</li>
+          <li><b>1. مدخل إلى أمن المعلومات</b><span>المعلومات وخصائصها الثلاث، والفرق بين أمن المعلومات والأمن السيبراني وحماية البيانات، ومفردات الأصل والتهديد والثغرة والخطر، والمبادئ الثابتة وأنواع الضوابط.</span></li>
+          <li><b>2. التهديدات والمهاجمون</b><span>الخصوم ودوافعهم، وسلسلة القتل السيبرانية ومصفوفة ATT&amp;CK، والهندسة الاجتماعية بأشكالها المحلية، والبرمجيات الخبيثة والفدية، والتهديد الداخلي، ومشهد الخليج.</span></li>
+          <li><b>3. إدارة المخاطر</b><span>دورة إدارة المخاطر، وجرد الأصول وتصنيفها، والتحليل النوعي والكمي بأمثلة محسوبة، وخيارات المعالجة، وشهية المخاطر، وسجل المخاطر الحي، ومخاطر الأطراف الثالثة والتركز.</span></li>
+          <li><b>4. الحوكمة والسياسات والأطر والامتثال</b><span>خطوط الدفاع الثلاثة، وهرم الوثائق، والأطر الدولية مقارنة، والمشهد التنظيمي في الدول الست ومنه إطار بنك الكويت المركزي الجديد، والنضج والمؤشرات والتدقيق.</span></li>
         </ol>
       </details>
       <details open>
         <summary><span><span class="n">٢</span>الضوابط التقنية</span><span class="cap">8 فصول</span></summary>
         <ol start="5">
-          <li>التشفير</li>
-          <li>الهوية والمصادقة وإدارة الصلاحيات</li>
-          <li>أمن الشبكات</li>
-          <li>أمن الأنظمة ونقاط النهاية</li>
-          <li>أمن التطبيقات والتطوير الآمن</li>
-          <li>أمن الحوسبة السحابية</li>
-          <li>أمن البيانات والخصوصية</li>
-          <li>أمن الأنظمة الصناعية وإنترنت الأشياء</li>
+          <li><b>5. التشفير</b><span>المتماثل وغير المتماثل والتجزئة والتوقيع الرقمي والبنية التحتية للمفاتيح العامة وTLS وإدارة المفاتيح والمرونة التشفيرية والتشفير المقاوم للحوسبة الكمية.</span></li>
+          <li><b>6. الهوية والمصادقة وإدارة الصلاحيات</b><span>عوامل المصادقة ومفاتيح المرور، والدخول الموحد والاتحاد، ونماذج التحكم في الوصول، والحسابات المميزة، ودورة حياة الهوية، والدليل النشط، وانعدام الثقة، والهوية الرقمية الوطنية.</span></li>
+          <li><b>7. أمن الشبكات</b><span>التجزئة والمناطق، والجدران النارية بأجيالها، وكشف التسلل، والوصول عن بعد، وأمن DNS والنطاقات المشابهة، واللاسلكي، والتحكم في الوصول، وحجب الخدمة، والمراقبة.</span></li>
+          <li><b>8. أمن الأنظمة ونقاط النهاية</b><span>خطوط الأساس والتحصين، وإدارة الثغرات بأولويات الاستغلال الفعلي، وكشف نقاط النهاية والاستجابة، والامتياز المحلي، والأجهزة المحمولة، والتشفير، والتسجيل، والأنظمة القديمة.</span></li>
+          <li><b>9. أمن التطبيقات والتطوير الآمن</b><span>فئات OWASP، ودورة التطوير الآمنة، ونمذجة التهديدات، والاختبارات بأنواعها، وواجهات البرمجة، وسلسلة توريد البرمجيات وقائمة المكونات، وDevSecOps، والشراء من الموردين.</span></li>
+          <li><b>10. أمن الحوسبة السحابية</b><span>نماذج الخدمة والمسؤولية المشتركة، والهوية والمفاتيح، والتهيئة الخاطئة وإدارة الوضع الأمني، والحاويات، والبيانات، والشبكات، والمراقبة، والبرمجيات كخدمة، والتوطين والموافقات وخطة الخروج.</span></li>
+          <li><b>11. أمن البيانات والخصوصية</b><span>التصنيف ودورة الحياة ومنع التسريب والترميز والإخفاء والنسخ الاحتياطي والإتلاف، ومبادئ الخصوصية وقوانين الدول الست، وتقييم الأثر، والإبلاغ عن الخروقات.</span></li>
+          <li><b>12. أمن الأنظمة الصناعية وإنترنت الأشياء</b><span>الأولويات المعكوسة، ونموذج بيردو ومعيار IEC 62443، والبروتوكولات الصناعية، وتهديدات المنطقة، والضوابط والمراقبة السلبية، وإنترنت الأشياء، والبنية الحيوية، ودراسة حالة محطة تحلية.</span></li>
         </ol>
       </details>
-      <details>
+      <details open>
         <summary><span><span class="n">٣</span>العمليات والصمود</span><span class="cap">4 فصول</span></summary>
         <ol start="13">
-          <li>مراقبة الأمن والعمليات الأمنية</li>
-          <li>الاستجابة للحوادث والتحقيق الرقمي</li>
-          <li>استمرارية الأعمال والتعافي من الكوارث</li>
-          <li>العنصر البشري والتوعية الأمنية</li>
+          <li><b>13. مراقبة الأمن والعمليات الأمنية</b><span>مركز العمليات بمستوياته، والسجلات بالأولوية، ونظام إدارة الأحداث والأتمتة، وهندسة الكشف وحالات الاستخدام، والاستخبارات التهديدية، وصيد التهديدات، والمقاييس، والمزود الخارجي.</span></li>
+          <li><b>14. الاستجابة للحوادث والتحقيق الرقمي</b><span>دورة الاستجابة، والاستعداد والساعة الأولى، والاحتواء والاستئصال والتعافي، والإبلاغ التنظيمي في الخليج، والتحقيق الرقمي وسلسلة الحيازة، والمراجعة بلا لوم، والتمارين، ودراسة حالة فدية.</span></li>
+          <li><b>15. استمرارية الأعمال والتعافي من الكوارث</b><span>المرونة التشغيلية، وتحليل أثر الأعمال وأرقامه الثلاثة، واستراتيجيات التعافي، والنسخ الاحتياطي ضد الفدية، والخطط الثلاث، والتمارين، والتركز، ودراسة حالة فقدان مركز بيانات.</span></li>
+          <li><b>16. العنصر البشري والتوعية الأمنية</b><span>من التوعية إلى السلوك إلى الثقافة، وبناء البرنامج، واختبارات التصيد بأخلاق، والقيادة والأبطال، ودورة الموظف، والهندسة الاجتماعية التي تستغل قيم المنطقة، وتوعية العملاء، والقياس.</span></li>
         </ol>
       </details>
-      <details>
-        <summary><span><span class="n">٤</span>آفاق</span><span class="cap">فصلان وملاحق</span></summary>
+      <details open>
+        <summary><span><span class="n">٤</span>آفاق</span><span class="cap">فصلان وثلاثة ملاحق</span></summary>
         <ol start="17">
-          <li>الذكاء الاصطناعي وأمن المعلومات</li>
-          <li>المسيرة المهنية في أمن المعلومات</li>
-          <li>مسرد المصطلحات عربي إنجليزي <small>ملحق</small></li>
-          <li>قائمة تحقق للمؤسسة الصغيرة والمتوسطة <small>ملحق</small></li>
+          <li><b>17. الذكاء الاصطناعي وأمن المعلومات</b><span>الذكاء الاصطناعي في يد المهاجم والتزييف العميق، والهجمات على نماذج اللغة وحقن الأوامر، وحوكمة الاستخدام في المؤسسة، والنماذج الداخلية، والدفاع، والأطر الناشئة عالمياً وخليجياً.</span></li>
+          <li><b>18. المسيرة المهنية في أمن المعلومات</b><span>خريطة التخصصات، والمهارات الأساسية، والشهادات بقيمتها الحقيقية، وبناء الخبرة، ومسارات نموذجية، وسوق العمل الخليجي، ودور الجامعات والحكومات، وأخلاقيات المهنة، والخطة الشخصية.</span></li>
+          <li><b>الملاحق</b><span>قائمة تحقق من أربعين ضابطاً للمؤسسة الصغيرة والمتوسطة، ومسرد يضم أكثر من 190 مصطلحاً بالعربية والإنجليزية مع رقم الفصل، والمراجع والمصادر الدولية والخليجية.</span></li>
         </ol>
       </details>
     </div>
@@ -228,6 +230,7 @@ footer a{color:var(--gold);text-decoration:none}
         <li>صندوق أهداف التعلم</li>
         <li>مقدمة تربط الموضوع بالواقع</li>
         <li>الأقسام مع شكل توضيحي وأمثلة ودراسات حالة</li>
+        <li>أخطاء شائعة وقائمة تحقق</li>
         <li>خلاصة الفصل</li>
         <li>جدول المصطلحات بالعربية والإنجليزية</li>
         <li>خريطة إلى الأطر الدولية والخليجية</li>
