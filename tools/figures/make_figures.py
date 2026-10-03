@@ -219,6 +219,16 @@ FIGURES = {
 }
 
 
+def autocrop(png_path, pad=40):
+    """يقص الهوامش البيضاء حول الشكل حتى لا يترك فراغاً في الصفحة."""
+    from PIL import Image, ImageOps
+    im = Image.open(png_path).convert("RGB")
+    w, h = im.size
+    bb = ImageOps.invert(im.convert("L")).point(lambda v: 255 if v > 10 else 0).getbbox()
+    if bb:
+        im.crop((max(0, bb[0] - pad), max(0, bb[1] - pad), min(w, bb[2] + pad), min(h, bb[3] + pad))).save(png_path)
+
+
 def render(svg_path, png_path, h=H):
     script = f"""
 const {{ chromium }} = require('playwright');
@@ -243,6 +253,7 @@ def main(argv):
         svg_path = OUT / f"{name}.svg"
         svg_path.write_text(svg(body, h=h), encoding="utf-8")
         render(svg_path, OUT / f"{name}.png", h)
+        autocrop(OUT / f"{name}.png")
         print("wrote", name)
 
 
