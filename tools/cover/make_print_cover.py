@@ -30,6 +30,72 @@ def data_uri(path, mime):
     return f"data:{mime};base64," + base64.b64encode(path.read_bytes()).decode()
 
 
+ISBN = "9798178685440"
+SITE = "https://gulfcyber.3li.info"
+
+L_CODES = ["0001101", "0011001", "0010011", "0111101", "0100011", "0110001", "0101111", "0111011", "0110111", "0001011"]
+G_CODES = ["0100111", "0110011", "0011011", "0100001", "0011101", "0111001", "0000101", "0010001", "0001001", "0010111"]
+R_CODES = ["1110010", "1100110", "1101100", "1000010", "1011100", "1001110", "1010000", "1000100", "1001000", "1110100"]
+PARITY = ["LLLLLL", "LLGLGG", "LLGGLG", "LLGGGL", "LGLLGG", "LGGLLG", "LGGGLL", "LGLGLG", "LGLGGL", "LGGLGL"]
+
+
+def ean13_check(d12):
+    total = sum(int(c) * (1 if i % 2 == 0 else 3) for i, c in enumerate(d12))
+    return str((10 - total % 10) % 10)
+
+
+def ean13_svg(code, width_in=1.9, height_in=0.95):
+    """باركود EAN-13 كصورة SVG بالمقاس المطلوب مع الأرقام تحته."""
+    assert len(code) == 13 and code[-1] == ean13_check(code[:12]), "رقم غير صحيح"
+    pattern = PARITY[int(code[0])]
+    bits = "101"
+    for i, ch in enumerate(code[1:7]):
+        bits += (L_CODES if pattern[i] == "L" else G_CODES)[int(ch)]
+    bits += "01010"
+    for ch in code[7:]:
+        bits += R_CODES[int(ch)]
+    bits += "101"
+    module = width_in / 113.0
+    bar_h = height_in - 0.18
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{width_in}in" height="{height_in}in" viewBox="0 0 {width_in} {height_in}">',
+           f'<rect width="{width_in}" height="{height_in}" fill="#fff"/>']
+    x = module * 9
+    guard = set(range(0, 3)) | set(range(45, 50)) | set(range(92, 95))
+    for i, b in enumerate(bits):
+        if b == "1":
+            h = bar_h + (0.06 if i in guard else 0)
+            out.append(f'<rect x="{x:.4f}" y="0.04" width="{module:.4f}" height="{h:.4f}" fill="#000"/>')
+        x += module
+    f = 'font-family="Noto Sans, DejaVu Sans, sans-serif" font-size="0.085" fill="#000"'
+    out.append(f'<text x="{module*4:.3f}" y="{height_in-0.03:.3f}" {f}>{code[0]}</text>')
+    out.append(f'<text x="{module*(9+3+21):.3f}" y="{height_in-0.03:.3f}" text-anchor="middle" {f} letter-spacing="0.012">{code[1:7]}</text>')
+    out.append(f'<text x="{module*(9+3+42+5+21):.3f}" y="{height_in-0.03:.3f}" text-anchor="middle" {f} letter-spacing="0.012">{code[7:]}</text>')
+    out.append("</svg>")
+    return "".join(out)
+
+
+def qr_svg(text, size_in=0.95):
+    import qrcode
+    q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=1)
+    q.add_data(text)
+    q.make(fit=True)
+    m = q.get_matrix()
+    n = len(m)
+    cell = size_in / n
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{size_in}in" height="{size_in}in" viewBox="0 0 {size_in} {size_in}">',
+           f'<rect width="{size_in}" height="{size_in}" fill="#fff"/>']
+    for r, row in enumerate(m):
+        for c, v in enumerate(row):
+            if v:
+                out.append(f'<rect x="{c*cell:.4f}" y="{r*cell:.4f}" width="{cell:.4f}" height="{cell:.4f}" fill="#000"/>')
+    out.append("</svg>")
+    return "".join(out)
+
+
+def svg_uri(svg):
+    return "data:image/svg+xml;base64," + base64.b64encode(svg.encode()).decode()
+
+
 def build_html(spine):
     total_w = TRIM_W * 2 + spine + BLEED * 2
     total_h = TRIM_H + BLEED * 2
@@ -59,9 +125,12 @@ html, body {{ margin:0; padding:0; width:{total_w}in; height:{total_h}in; font-f
 .back .inner {{ position:absolute; left:{BLEED + 0.55}in; right:0.55in; top:0.75in; bottom:1.7in; color:#F4EBD0; }}
 .back h2 {{ font-size:0.26in; margin:0 0 0.18in; color:#D4A72C; font-weight:700; }}
 .back p {{ font-size:0.146in; line-height:1.75; margin:0 0 0.12in; }}
-.bio {{ position:absolute; left:{BLEED + 0.55}in; right:0.55in; bottom:1.85in; display:flex; gap:0.18in; align-items:center; color:#F4EBD0; font-size:0.125in; line-height:1.6; border-top:1px solid rgba(212,167,44,.6); padding-top:0.15in; }}
+.bio {{ position:absolute; left:{BLEED + 0.55}in; right:0.55in; bottom:2.05in; display:flex; gap:0.18in; align-items:center; color:#F4EBD0; font-size:0.125in; line-height:1.6; border-top:1px solid rgba(212,167,44,.6); padding-top:0.15in; }}
 .bio img {{ width:0.85in; height:0.85in; border-radius:50%; object-fit:cover; border:2px solid #D4A72C; flex:none; }}
-.backsite {{ position:absolute; left:0; right:0.55in; bottom:0.55in; text-align:right; color:#D4A72C; font-size:0.14in; }}
+.barcode {{ position:absolute; right:0.45in; bottom:0.45in; width:2.05in; height:1.32in; background:#fff; border-radius:0.04in; display:flex; flex-direction:column; align-items:center; justify-content:center; }}
+.barcode .isbn {{ font-family:"Noto Sans", sans-serif; font-size:0.1in; color:#000; direction:ltr; margin-bottom:0.02in; }}
+.qr {{ position:absolute; left:{BLEED + 0.55}in; bottom:0.45in; display:flex; align-items:center; gap:0.14in; color:#F4EBD0; font-size:0.12in; line-height:1.6; }}
+.qr img {{ width:1.0in; height:1.0in; background:#fff; padding:0.04in; border-radius:0.04in; }}
 .backmap {{ position:absolute; right:-1.2in; bottom:0.6in; width:4.2in; opacity:.14; }}
 </style></head><body><div class="wrap">
 <div class="panel front">
@@ -79,7 +148,9 @@ html, body {{ margin:0; padding:0; width:{total_w}in; height:{total_h}in; font-f
 <div class="panel back">
   <img class="backmap" src="{map_svg}">
   <div class="inner"><h2>من الخليج إلى الخليج</h2>{blurb}</div>
-  <div class="bio">{'<img src="' + photo_uri + '">' if photo_uri else ''}<div>{BIO}<br><span style="color:#D4A72C">gulfcyber.3li.info</span></div></div>
+  <div class="bio">{'<img src="' + photo_uri + '">' if photo_uri else ''}<div>{BIO}</div></div>
+  <div class="qr"><img src="{svg_uri(qr_svg(SITE))}"><div>الفصل الأول مجاناً والتدريبات والقوالب<br><span style="color:#D4A72C">gulfcyber.3li.info</span></div></div>
+  <div class="barcode"><div class="isbn">ISBN {ISBN}</div><img src="{svg_uri(ean13_svg(ISBN))}" style="width:1.9in;height:0.95in"></div>
 </div>
 </div></body></html>"""
 
