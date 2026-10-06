@@ -4,6 +4,8 @@
 
 الموقع: [gulfcyber.3li.info](https://gulfcyber.3li.info)
 
+الكتاب على أمازون: [amazon.com/dp/B0H6R5RR39](https://www.amazon.com/dp/B0H6R5RR39)
+
 ## ما في هذا المستودع
 
 | المجلد | المحتوى |
@@ -37,4 +39,4 @@ python3 tools/cover/make_covers.py --design final   يولد الغلاف الم
 
 ## English
 
-Companion site, labs and tools for the Arabic book "The Comprehensive Gulf Reference in Cybersecurity". The manuscript itself is not in this repository. Labs are per chapter with templates and sample data, figures are generated from a small Python tool, and the dotted Gulf map on the cover is built from geoBoundaries data.
+Companion site, labs and tools for the Arabic book "The Comprehensive Gulf Reference in Cybersecurity". The book is available on Amazon at https://www.amazon.com/dp/B0H6R5RR39 and the manuscript itself is not in this repository. Labs are per chapter with templates and sample data, figures are generated from a small Python tool, and the dotted Gulf map on the cover is built from geoBoundaries data.

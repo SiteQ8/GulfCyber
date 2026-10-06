@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Book","name":"المرجع الخليجي الشامل في الأمن السيبراني","alternativeHeadline":"الأسس والضوابط والعمليات والتنظيم","author":{"@type":"Person","name":"علي العنزي","url":"https://3li.info"},"inLanguage":"ar","image":"https://gulfcyber.3li.info/assets/cover.jpg","url":"https://gulfcyber.3li.info/","genre":"أمن المعلومات","datePublished":"2026"}
+{"@context":"https://schema.org","@type":"Book","name":"المرجع الخليجي الشامل في الأمن السيبراني","alternativeHeadline":"الأسس والضوابط والعمليات والتنظيم","author":{"@type":"Person","name":"علي العنزي","url":"https://3li.info"},"inLanguage":"ar","image":"https://gulfcyber.3li.info/assets/cover.jpg","url":"https://gulfcyber.3li.info/","sameAs":["https://www.amazon.com/dp/B0H6R5RR39"],"genre":"أمن المعلومات","datePublished":"2026","offers":{"@type":"Offer","url":"https://www.amazon.com/dp/B0H6R5RR39","availability":"https://schema.org/InStock"}}
 </script>
 <style>
 :root{--blue:#0E2A47;--blue2:#163B63;--gold:#D4A72C;--gold2:#9A7A1E;--teal:#2A9D8F;--cream:#F6F1E7;--ink:#111826;--muted:#5B6678;--line:#E3DCCB;--white:#fff}
@@ -45,8 +45,17 @@ nav a:hover{background:rgba(255,255,255,.1);opacity:1}
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
 .btn.gold{background:var(--gold);color:var(--blue)}
 .btn.ghost{border-color:rgba(255,255,255,.55);color:#fff}
-.btn.soon{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2);cursor:default}
-.btn.soon:hover{transform:none;box-shadow:none}
+.btn svg{width:20px;height:20px;flex:none}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(212,167,44,.14);color:var(--gold);border:1px solid rgba(212,167,44,.55);padding:4px 14px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;margin-bottom:16px}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(212,167,44,.25)}
+nav a.buy{background:var(--gold);color:var(--blue);font-weight:700;opacity:1;margin-inline-start:6px}
+nav a.buy:hover{background:#e2b843}
+.buy-band{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;padding:48px 0;border-top:3px solid var(--gold)}
+.buy-band .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center}
+.buy-band img{width:120px;border-radius:4px;box-shadow:0 16px 34px rgba(0,0,0,.45)}
+.buy-band h2{margin:0 0 6px;font-size:28px;color:#fff}
+.buy-band p{margin:0;opacity:.9;font-size:17px}
+.buy-band .cta{margin-top:0}
 .cover{justify-self:center;position:relative}
 .cover img{width:340px;border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);transform:rotate(-3deg)}
 .cover::after{content:"";position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(212,167,44,.25),transparent 65%);z-index:-1}
@@ -102,7 +111,7 @@ footer a{color:var(--gold);text-decoration:none}
 .mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:30;background:rgba(14,42,71,.97);border-top:2px solid var(--gold);padding:9px 12px;gap:10px;backdrop-filter:blur(6px)}
 .mobile-bar a,.mobile-bar span{flex:1;text-align:center;padding:11px 8px;border-radius:10px;font-weight:700;font-size:14.5px;text-decoration:none}
 .mobile-bar .gold{background:var(--gold);color:var(--blue)}
-.mobile-bar .soon{background:rgba(255,255,255,.12);color:#fff}
+.mobile-bar .alt{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28)}
 @media (max-width:860px){
   .parts{grid-template-columns:1fr}
   .parts details:nth-of-type(n){grid-column:auto;grid-row:auto}
@@ -119,7 +128,8 @@ footer a{color:var(--gold);text-decoration:none}
   nav{width:100%;justify-content:center;flex-wrap:nowrap;overflow-x:auto;gap:0;scrollbar-width:none}
   nav::-webkit-scrollbar{display:none}
   nav a{padding:4px 9px;font-size:13.5px;white-space:nowrap;opacity:1}
-  .hero .wrap{padding:36px 18px 44px}
+  .hero{padding:0}
+  .hero .wrap{padding:30px 18px 44px}
   .hero h1{font-size:31px}
   .hero h2{font-size:19px}
   .hero p{font-size:17px}
@@ -128,6 +138,11 @@ footer a{color:var(--gold);text-decoration:none}
   .cover img{width:230px;transform:none}
   body{padding-bottom:74px}
   .mobile-bar{display:flex}
+  nav a.buy{display:none}
+  .pill{margin-bottom:12px}
+  .buy-band .wrap{grid-template-columns:1fr;text-align:center;gap:18px}
+  .buy-band img{margin:0 auto;width:110px}
+  .buy-band h2{font-size:24px}
 }
 </style>
 </head>
@@ -141,6 +156,7 @@ footer a{color:var(--gold);text-decoration:none}
       <a href="#labs">التدريبات</a>
       <a href="#author">المؤلف</a>
       <a href="samples/chapter-1.pdf">عينة مجانية</a>
+      <a class="buy" href="https://www.amazon.com/dp/B0H6R5RR39">اشترِ الكتاب</a>
     </nav>
   </div>
 </header>
@@ -149,13 +165,14 @@ footer a{color:var(--gold);text-decoration:none}
   <img class="map" src="assets/gulf-map.svg" alt="">
   <div class="wrap">
     <div>
+      <a class="pill" href="https://www.amazon.com/dp/B0H6R5RR39">صدر الآن على أمازون</a>
       <h1>المرجع الخليجي الشامل في الأمن السيبراني</h1>
       <h2>الأسس والضوابط والعمليات والتنظيم</h2>
       <p>كتاب عربي من الخليج إلى الخليج، يجمع الأساس النظري والممارسة العملية والسياق التنظيمي لدول المجلس في مرجع واحد يصلح للمقرر الجامعي ولبرامج التأهيل الحكومية وللممارس في الميدان.</p>
       <div class="cta">
-        <a class="btn gold" href="samples/chapter-1.pdf">حمّل الفصل الأول مجاناً</a>
+        <a class="btn gold" href="https://www.amazon.com/dp/B0H6R5RR39"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 016 0"/></svg>اشترِ من أمازون</a>
+        <a class="btn ghost" href="samples/chapter-1.pdf">حمّل الفصل الأول مجاناً</a>
         <a class="btn ghost" href="https://github.com/SiteQ8/GulfCyber">التدريبات على GitHub</a>
-        <span class="btn soon" id="buy">قريباً على أمازون</span>
       </div>
     </div>
     <div class="cover"><img src="assets/cover.jpg" alt="غلاف الكتاب"></div>
@@ -293,33 +310,40 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="buy-band" aria-label="شراء الكتاب">
+  <div class="wrap">
+    <img src="assets/cover.jpg" alt="غلاف كتاب المرجع الخليجي الشامل في الأمن السيبراني">
+    <div>
+      <h2>احصل على نسختك</h2>
+      <p>الكتاب متاح الآن على أمازون، ويمكنك أن تبدأ بالفصل الأول مجاناً قبل الشراء.</p>
+    </div>
+    <div class="cta">
+      <a class="btn gold" href="https://www.amazon.com/dp/B0H6R5RR39">اشترِ من أمازون</a>
+      <a class="btn ghost" href="samples/chapter-1.pdf">الفصل الأول مجاناً</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:56px">
   <div class="wrap">
     <div class="en">
       <h2>About the book</h2>
       <p>A comprehensive Arabic reference on information security and cybersecurity written from the Gulf for the Gulf. It covers foundations, technical controls, operations and resilience, and emerging topics, and places the GCC regulatory landscape, including the Central Bank of Kuwait framework, the Saudi national controls, the Qatar standard and the regional privacy laws, inside every chapter rather than in an appendix.</p>
       <p>Each chapter opens with learning objectives and closes with a summary, an Arabic and English glossary, a map to international and Gulf frameworks, review questions and hands-on exercises, which makes it suitable for university courses and government training programs. Companion labs and figures are open source on GitHub.</p>
+      <p><a href="https://www.amazon.com/dp/B0H6R5RR39" style="color:var(--gold2);font-weight:600;text-decoration:none">Available now on Amazon</a></p>
     </div>
   </div>
 </section>
 
 <div class="mobile-bar">
-  <a class="gold" href="samples/chapter-1.pdf">الفصل الأول مجاناً</a>
-  <span class="soon" id="buy-mobile">قريباً على أمازون</span>
+  <a class="gold" href="https://www.amazon.com/dp/B0H6R5RR39">اشترِ من أمازون</a>
+  <a class="alt" href="samples/chapter-1.pdf">الفصل الأول مجاناً</a>
 </div>
 <footer>
   <div class="wrap">
     <div>© 2026 علي العنزي، جميع الحقوق محفوظة</div>
-    <div><a href="https://3li.info">3li.info</a> | <a href="https://github.com/SiteQ8/GulfCyber">GitHub</a> | <a href="mailto:info@3li.info">info@3li.info</a></div>
+    <div><a href="https://www.amazon.com/dp/B0H6R5RR39">أمازون</a> | <a href="https://3li.info">3li.info</a> | <a href="https://github.com/SiteQ8/GulfCyber">GitHub</a> | <a href="mailto:info@3li.info">info@3li.info</a></div>
   </div>
 </footer>
-<script>
-(function(){
-  var buy=document.getElementById('buy');
-  var link=buy.getAttribute('data-amazon');
-  if(link){var a=document.createElement('a');a.className='btn gold';a.href=link;a.textContent='اشترِ من أمازون';buy.replaceWith(a);
-    var m=document.getElementById('buy-mobile');if(m){var b=document.createElement('a');b.className='gold';b.href=link;b.textContent='اشترِ من أمازون';m.replaceWith(b);}}
-})();
-</script>
 </body>
 </html>
