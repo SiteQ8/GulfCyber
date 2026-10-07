@@ -18,7 +18,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="pages/p001.webp">
+<script>if(/[?&]open=1/.test(location.search))document.documentElement.className+=" from-home";</script>
 <style>
+@view-transition{navigation:auto}
 :root{--blue:#0E2A47;--gold:#D4A72C;--ink:#0b1a2b}
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;overflow:hidden;overscroll-behavior:none}
@@ -69,6 +71,8 @@ body{font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahom
 
 .loading{position:fixed;inset:0;display:grid;place-items:center;z-index:4;transition:opacity .5s;pointer-events:none}
 .loading.done{opacity:0}
+.from-home .loading{background:#0b1a2b;transition:opacity .7s ease}
+.from-home .loading .spinner{opacity:0}
 .spinner{width:40px;height:40px;border-radius:50%;border:3px solid rgba(212,167,44,.25);border-top-color:var(--gold);animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -145,6 +149,7 @@ body{font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahom
 
   function start(meta){
     var N = meta.count, book = document.getElementById('book');
+    var fromHome = /[?&]open=1/.test(location.search);
     var pad = function(n){return ('00'+n).slice(-3);};
     // pages go in reverse so the library's left to right engine reads as a right to left book
     var els = [];
@@ -171,7 +176,7 @@ body{font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahom
       width: meta.width, height: meta.height, size: 'stretch',
       minWidth: 330, maxWidth: 1000, minHeight: 495, maxHeight: 1500,
       showCover: true, usePortrait: true, autoSize: false,
-      startPage: N - 1, flippingTime: reduce ? 350 : 950,
+      startPage: fromHome ? N - 2 : N - 1, flippingTime: reduce ? 350 : 950,
       maxShadowOpacity: 0.45, mobileScrollSupport: false, drawShadow: true
     });
 
@@ -224,14 +229,25 @@ body{font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahom
 
     flip.loadFromHTML(els);
 
-    // open the book once the cover is in view
-    var cover = els[N - 1].querySelector('img');
+    // show the book once the first visible pages are loaded, then open it unless it arrives open from the homepage
+    var first = (fromHome ? [els[N - 2], els[N - 3]] : [els[N - 1]]).map(function(el){ return el.querySelector('img'); });
+    var shown = false;
     function ready(){
+      if (shown) return; shown = true;
       document.getElementById('loading').classList.add('done');
       update();
-      if (!reduce) setTimeout(function(){ if (flip.getCurrentPageIndex() === N - 1) next(); }, 1300);
+      if (!reduce && !fromHome) setTimeout(function(){ if (flip.getCurrentPageIndex() === N - 1) next(); }, 1300);
     }
-    if (cover.complete && cover.naturalWidth) ready(); else { cover.addEventListener('load', ready); cover.addEventListener('error', ready); }
+    var pending = first.filter(function(i){ return !(i.complete && i.naturalWidth); });
+    if (!pending.length) ready();
+    else {
+      var left = pending.length;
+      pending.forEach(function(i){
+        var done = function(){ if (--left <= 0) ready(); };
+        i.addEventListener('load', done); i.addEventListener('error', done);
+      });
+      setTimeout(ready, 4000);
+    }
   }
 })();
 </script>

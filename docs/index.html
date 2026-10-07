@@ -56,11 +56,25 @@ nav a.buy:hover{background:#e2b843}
 .btn.gold{background:var(--gold);color:var(--blue)}
 .btn.ghost{border-color:rgba(255,255,255,.55);color:#fff}
 .btn.navy{background:var(--blue);color:#fff}
-.book3d{justify-self:center;perspective:1800px;padding:24px 0 36px}
-.book{--w:300px;--h:480px;--t:34px;position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;transform:rotateY(24deg) rotateX(4deg);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
-.book:hover{transform:rotateY(10deg) rotateX(2deg)}
-.book .front{position:absolute;inset:0;width:100%;height:100%;border-radius:2px 6px 6px 2px;transform:translateZ(calc(var(--t) / 2));backface-visibility:hidden}
-.book .front-shine{position:absolute;inset:0;border-radius:2px 6px 6px 2px;transform:translateZ(calc(var(--t) / 2 + .5px));background:linear-gradient(100deg,rgba(255,255,255,.18),rgba(255,255,255,0) 22%,rgba(0,0,0,0) 80%,rgba(0,0,0,.18));pointer-events:none}
+@view-transition{navigation:auto}
+.book3d{justify-self:center;perspective:1800px;padding:24px 0 20px;display:flex;flex-direction:column;align-items:center;gap:18px;text-decoration:none;color:inherit;cursor:pointer;position:relative;z-index:2;-webkit-tap-highlight-color:transparent}
+.book{--w:300px;--h:480px;--t:34px;--dx:0px;display:block;position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;transform:rotateY(24deg) rotateX(4deg);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.book3d:hover .book,.book3d:focus-visible .book{transform:rotateY(12deg) rotateX(2deg) translateY(-6px)}
+.book .flap{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:right center;transform:translateZ(calc(var(--t) / 2));transition:transform 1.15s cubic-bezier(.6,.02,.25,1)}
+.book .front{position:absolute;inset:0;width:100%;height:100%;border-radius:2px 6px 6px 2px;backface-visibility:hidden}
+.book .inside{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px 2px 2px 6px;transform:rotateY(180deg);backface-visibility:hidden;background:#0a1f36}
+.book .front-shine{position:absolute;inset:0;border-radius:2px 6px 6px 2px;transform:translateZ(.6px);backface-visibility:hidden;background:linear-gradient(100deg,rgba(255,255,255,.18),rgba(255,255,255,0) 22%,rgba(0,0,0,0) 80%,rgba(0,0,0,.18));pointer-events:none}
+.book .leaf{position:absolute;top:3px;bottom:3px;left:0;right:2px;width:calc(100% - 2px);height:calc(100% - 6px);object-fit:cover;background:#fff;transform:translateZ(calc(var(--t) / 2 - 1px))}
+.open-hint{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--gold);background:rgba(7,22,40,.55);border:1px solid rgba(212,167,44,.55);padding:6px 14px;border-radius:999px;transition:background .2s,transform .2s,opacity .3s}
+.open-hint svg{width:18px;height:18px}
+.book3d:hover .open-hint{background:rgba(212,167,44,.18);transform:translateY(-2px)}
+.book3d.opening{cursor:default}
+.book3d.opening .book{transition:transform 1s cubic-bezier(.45,.05,.2,1);transform:translateX(var(--dx)) rotateY(0deg) rotateX(0deg) scale(var(--zoom,1.06))}
+.book3d.opening .flap{transition-delay:.45s;transform:translateZ(calc(var(--t) / 2)) rotateY(180deg)}
+.book3d.opening .open-hint{opacity:0}
+.hero.opening .hero-copy{opacity:0;transform:translateX(30px);transition:opacity .5s,transform .6s}
+.page-fade{position:fixed;inset:0;background:#0b1a2b;opacity:0;pointer-events:none;z-index:100;transition:opacity .5s ease}
+.page-fade.on{opacity:1}
 .book .back{position:absolute;inset:0;border-radius:6px 2px 2px 6px;background:#0b2036;transform:translateZ(calc(var(--t) / -2));box-shadow:-24px 34px 60px rgba(0,0,0,.65)}
 .book .pages{position:absolute;top:5px;bottom:5px;left:0;width:var(--t);transform-origin:left center;transform:translateZ(calc(var(--t) / -2)) rotateY(-90deg);background:repeating-linear-gradient(90deg,#f7f1e3 0 2px,#e4dac4 2px 3px);box-shadow:inset 0 0 12px rgba(0,0,0,.25)}
 
@@ -170,6 +184,7 @@ footer a{color:var(--gold);text-decoration:none}
   .hero-shade{background:linear-gradient(to bottom,rgba(7,22,40,.70) 0%,rgba(7,22,40,.82) 55%,rgba(14,42,71,1) 100%)}
   .book3d{padding:8px 0 24px}
   .book{--w:210px;--h:336px;--t:24px;transform:rotateY(16deg) rotateX(3deg)}
+  .book3d:hover .book{transform:rotateY(10deg) rotateX(2deg)}
   .part-img{height:140px}
   .stats .wrap{grid-template-columns:repeat(2,1fr);gap:14px;padding:20px}
   .head{grid-template-columns:1fr;gap:10px;margin-bottom:24px}
@@ -220,7 +235,7 @@ footer a{color:var(--gold);text-decoration:none}
   <video class="hero-bg" muted loop playsinline preload="none" aria-hidden="true"></video>
   <div class="hero-shade"></div>
   <div class="wrap">
-    <div>
+    <div class="hero-copy">
       <a class="pill" href="https://www.amazon.com/dp/B0H6R5RR39">صدر الآن على أمازون</a>
       <h1>المرجع الخليجي الشامل في الأمن السيبراني</h1>
       <h2>الأسس والضوابط والعمليات والتنظيم</h2>
@@ -231,12 +246,19 @@ footer a{color:var(--gold);text-decoration:none}
         <a class="btn ghost" href="https://github.com/SiteQ8/GulfCyber">التدريبات على GitHub</a>
       </div>
     </div>
-    <div class="book3d"><div class="book">
-      <span class="back" aria-hidden="true"></span>
-      <span class="pages" aria-hidden="true"></span>
-      <img class="front" src="assets/cover.jpg" alt="غلاف الكتاب" width="900" height="1440">
-      <span class="front-shine" aria-hidden="true"></span>
-    </div></div>
+    <a class="book3d" id="openBook" href="samples/?open=1" aria-label="افتح الكتاب واقرأ الفصل الأول مجاناً">
+      <span class="book">
+        <span class="back" aria-hidden="true"></span>
+        <span class="pages" aria-hidden="true"></span>
+        <img class="leaf" src="samples/pages/p003.webp" alt="" aria-hidden="true" loading="lazy" width="900" height="1350">
+        <span class="flap">
+          <img class="front" src="assets/cover.jpg" alt="غلاف الكتاب" width="900" height="1440">
+          <img class="inside" src="samples/pages/p002.webp" alt="" aria-hidden="true" loading="lazy" width="900" height="1350">
+          <span class="front-shine" aria-hidden="true"></span>
+        </span>
+      </span>
+      <span class="open-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3 5v13c4-.5 7 0 9 1.5 2-1.5 5-2 9-1.5V5c-4-.5-7 0-9 1.5z"/><path d="M12 6.5V19.5"/></svg>افتح الكتاب</span>
+    </a>
   </div>
 </section>
 
@@ -379,7 +401,7 @@ footer a{color:var(--gold);text-decoration:none}
 
 <section class="buy-band" aria-label="شراء الكتاب">
   <div class="wrap">
-    <img src="assets/cover.jpg" alt="غلاف كتاب المرجع الخليجي الشامل في الأمن السيبراني">
+    <a href="samples/" aria-label="افتح الكتاب واقرأ الفصل الأول"><img src="assets/cover.jpg" alt="غلاف كتاب المرجع الخليجي الشامل في الأمن السيبراني"></a>
     <div>
       <h2>احصل على نسختك</h2>
       <p>الكتاب متاح الآن على أمازون، ويمكنك أن تبدأ بالفصل الأول مجاناً قبل الشراء.</p>
@@ -422,6 +444,38 @@ footer a{color:var(--gold);text-decoration:none}
   [['webm','video/webm; codecs="vp9"'],['mp4','video/mp4']].forEach(function(t){var s=document.createElement('source');s.src=base+'.'+t[0];s.type=t[1];v.appendChild(s);});
   v.muted=true;v.load();
   var p=v.play();if(p&&p.catch)p.catch(function(){});
+})();
+</script>
+<div class="page-fade" id="pageFade" aria-hidden="true"></div>
+<script>
+(function(){
+  var link=document.getElementById('openBook');
+  if(!link)return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // warm the two inner pages so they are ready when the cover opens
+  link.addEventListener('pointerenter',function(){link.querySelectorAll('img[loading=lazy]').forEach(function(i){i.loading='eager';});},{once:true});
+  link.addEventListener('click',function(e){
+    if(reduce||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    e.preventDefault();
+    if(link.classList.contains('opening'))return;
+    link.querySelectorAll('img[loading=lazy]').forEach(function(i){i.loading='eager';});
+    var book=link.querySelector('.book');
+    var r=book.getBoundingClientRect();
+    var spine=r.right, centre=window.innerWidth/2, w=r.width;
+    // the open spread is twice the cover wide with the spine in the middle
+    var zoom=Math.min(1.06,(window.innerWidth-24)/(2*w));
+    book.style.setProperty('--dx',(centre-spine)+'px');
+    book.style.setProperty('--zoom',zoom.toFixed(3));
+    var top=r.top+window.scrollY-Math.max(16,(window.innerHeight-r.height)/2);
+    if(Math.abs(window.scrollY-top)>40)window.scrollTo({top:top,behavior:'smooth'});
+    document.querySelector('.hero').classList.add('opening');
+    link.classList.add('opening');
+    var fade=document.getElementById('pageFade');
+    setTimeout(function(){fade.classList.add('on');},1450);
+    setTimeout(function(){window.location.href=link.getAttribute('href');},1950);
+  });
+  // coming back with the browser button restores the closed book
+  window.addEventListener('pageshow',function(ev){if(ev.persisted){link.classList.remove('opening');document.querySelector('.hero').classList.remove('opening');document.getElementById('pageFade').classList.remove('on');}});
 })();
 </script>
 </body>
