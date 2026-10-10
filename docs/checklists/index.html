@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>قوائم التحقق | المرجع الخليجي الشامل في الأمن السيبراني</title>
+<meta name="description" content="قائمتا تحقق من الكتاب تستخدمهما المؤسسة الصغيرة والمتوسطة والجهة الحكومية والمؤسسة الكبرى لمراجعة ضوابط الأمن السيبراني، بخانات تُحفظ في متصفحك وتُطبع وتُصدَّر.">
+<link rel="canonical" href="https://gulfcyber.3li.info/checklists/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E2A47'/%3E%3Ccircle cx='32' cy='30' r='14' fill='%23D4A72C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0E2A47;--blue2:#163B63;--gold:#D4A72C;--gold2:#9A7A1E;--cream:#F6F1E7;--ink:#111826;--muted:#5B6678;--line:#E3DCCB;--white:#fff;--teal:#0F766E;--teal-pale:#E3F4F1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;color:var(--ink);background:var(--cream);line-height:1.8;font-size:17px}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:rgba(14,42,71,.96);backdrop-filter:blur(6px);color:#fff;border-bottom:3px solid var(--gold)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{font-weight:700;font-size:15px;white-space:nowrap;text-decoration:none}
+.brand span{color:var(--gold)}
+header nav{display:flex;gap:4px;align-items:center}
+header nav a{text-decoration:none;padding:8px 12px;border-radius:8px;font-size:14px;opacity:.92}
+header nav a:hover{background:rgba(255,255,255,.1);opacity:1}
+header nav a.buy{background:var(--gold);color:var(--blue);font-weight:700;opacity:1}
+.intro{padding:40px 0 10px}
+.intro h1{font-size:clamp(26px,4vw,38px);color:var(--blue);margin:0 0 10px;line-height:1.35}
+.intro p{color:var(--muted);margin:0;max-width:720px}
+.tabs{display:flex;gap:8px;margin:26px 0 14px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:600;font-size:15px;border:1.5px solid var(--blue);background:#fff;color:var(--blue);border-radius:999px;padding:9px 18px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--blue);color:#fff}
+.panel{display:none}
+.panel[data-active="true"]{display:block}
+.bar{position:sticky;top:64px;z-index:10;background:var(--cream);padding:12px 0 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.bar .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.meter{flex:1;min-width:200px;height:12px;background:#E8E2D4;border-radius:999px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--gold));transition:width .3s}
+.count{font-weight:700;color:var(--blue);white-space:nowrap;font-variant-numeric:tabular-nums}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.actions button{font:inherit;font-size:14px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer;color:var(--blue)}
+.actions button:hover{border-color:var(--blue)}
+.lead{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 22px;color:#2B3647;font-size:16px}
+.group{margin:0 0 26px}
+.group h2{font-size:19px;color:var(--blue);margin:0 0 8px;padding-inline-start:12px;border-inline-start:4px solid var(--gold);line-height:1.5}
+.group ol{list-style:none;margin:0;padding:0;counter-reset:none}
+.item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;transition:background .2s}
+.item:hover{border-color:#C9BFA7}
+.item.done{background:var(--teal-pale);border-color:#BFE3DC}
+.item.done .t{color:#3F5A56;text-decoration:line-through;text-decoration-color:#9CC7BF}
+.item input{width:22px;height:22px;margin:6px 0 0;accent-color:var(--teal);cursor:pointer;flex:none}
+.item label{cursor:pointer}
+.item .n{display:inline-block;min-width:30px;font-weight:700;color:var(--gold2);font-variant-numeric:tabular-nums}
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:30px 0 40px}
+.q h2{color:var(--blue);font-size:20px;margin:0 0 6px}
+.q p{color:var(--muted);margin:0 0 12px;font-size:15px}
+.q ol{margin:0;padding-inline-start:22px}
+.q li{margin:6px 0}
+.q li::marker{color:var(--gold2);font-weight:700}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px}
+footer a{color:var(--blue)}
+.btn{display:inline-block;background:var(--gold);color:var(--blue);font-weight:700;text-decoration:none;padding:10px 18px;border-radius:10px;margin-top:10px}
+@media (max-width:640px){header nav a:not(.buy){display:none}.bar{top:64px}}
+@media print{
+  header,.tabs,.bar .actions,footer .btn{display:none}
+  body{background:#fff;font-size:12.5px}
+  .panel{display:block!important;page-break-before:always}
+  .panel:first-of-type{page-break-before:auto}
+  .item{break-inside:avoid;padding:6px 10px;margin:4px 0;border-color:#999}
+  .item input{appearance:none;width:14px;height:14px;border:1.5px solid #333;border-radius:3px;margin-top:5px}
+  .item input:checked{background:#333}
+  .item.done .t{text-decoration:none;color:#333}
+  .bar{position:static;border:0}
+  .meter{display:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="../">المرجع <span>الخليجي</span> الشامل في الأمن السيبراني</a>
+    <nav>
+      <a href="../#contents">المحتويات</a>
+      <a href="../samples/">اقرأ مجاناً</a>
+      <a class="buy" href="https://www.amazon.com/dp/B0H6R5RR39">اشترِ الكتاب</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>قوائم التحقق من الكتاب، للاستخدام لا للقراءة فقط</h1>
+    <p>القائمتان من ملاحق الكتاب كما هما، علّم على ما أنجزته فيُحفظ في متصفحك وحده، واطبعها لاجتماعك، أو صدّر ما بقي ليصير قائمة مهام لفريقك.</p>
+  </section>
+
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div id="panels"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>كُتب كل بند في القائمتين أمراً مباشراً يُحال إلى صاحبه ويُطلب عليه دليل، والفصول التي تشرح كل مجموعة مذكورة في عنوانها، وتفصيل الضوابط كلها في الكتاب.</p>
+    <a class="btn" href="https://www.amazon.com/dp/B0H6R5RR39">اشترِ الكتاب من أمازون</a>
+  </div>
+</footer>
+
+<script>
+const DATA = {"sme": {"title": "قائمة تحقق للمؤسسة الصغيرة والمتوسطة", "intro": "لا تملك المؤسسة الصغيرة فريق أمن ولا ميزانية كبيرة، لكنها تملك ما يكفي لصد معظم الهجمات إذا طبقت الأساسيات، وتجمع هذه القائمة في ست مجموعات أربعين ضابطاً يمكن إنجاز معظمها في أشهر قليلة بأدوات متاحة، وكُتب كل بند فيها بصيغة أمر يسلمه المدير إلى فريقه كما هو، فتصلح نقطة بداية لمن يسأل من أين يبدأ وأداة تقييم ذاتي سريع لمن بدأ.", "groups": [{"name": "الهوية والحسابات", "items": ["فعّل المصادقة متعددة العوامل للبريد ولكل دخول من خارج المؤسسة ولكل حساب إداري", "استعمل كلمة مرور طويلة وفريدة لكل خدمة واحفظها في برنامج مخصص لإدارة كلمات المرور", "لا تمنح أي مستخدم صلاحية مدير محلي على جهازه", "أنشئ حساباً مستقلاً لكل موظف ولا تسمح بالحسابات المشتركة", "عطّل حسابات المغادرين في يومهم الأخير", "راجع الصلاحيات كل ستة أشهر واسحب ما لم يبقَ له مسوغ"], "intro": ""}, {"name": "الأجهزة والأنظمة", "items": ["فعّل التحديثات التلقائية لأنظمة التشغيل والمتصفحات وسائر التطبيقات", "ثبّت على كل جهاز وخادم حل حماية يراقب السلوك ولا يكتفي ببصمات الهجمات المعروفة", "شفّر أقراص الحواسيب المحمولة والهواتف", "أعدّ جرداً للأجهزة والبرمجيات والحسابات والخدمات السحابية وحدّثه عند كل تغيير", "أزل البرمجيات والخدمات غير المستخدمة", "اضبط قفل الشاشة تلقائياً واكتب سياسة لاستخدام الأجهزة الشخصية في العمل"], "intro": ""}, {"name": "الشبكة والوصول", "items": ["اضبط جدار الحماية ليمنع كل اتصال لم يُسمح به صراحة", "افصل شبكة الزوار والأجهزة الذكية عن شبكة العمل", "أمّن الشبكة اللاسلكية بأحدث بروتوكول وكلمة مرور قوية وغيّرها عند مغادرة أي موظف", "أغلق كل منفذ إدارة مكشوف للإنترنت", "لا تسمح للموردين بالوصول عن بعد إلا عند الطلب وبمصادقة متعددة العوامل", "رشّح استعلامات أسماء النطاقات لمنع الوصول إلى النطاقات الخبيثة"], "intro": ""}, {"name": "البيانات والنسخ الاحتياطي", "items": ["صنّف البيانات في ثلاثة مستويات واعرف أين تُحفظ الحساسة منها", "انسخ كل ما يهم احتياطياً كل يوم بقاعدة ثلاثة اثنان واحد، أي ثلاث نسخ على نوعين من الوسائط وواحدة خارج المبنى", "احتفظ بنسخة معزولة أو غير قابلة للتعديل لا تصل إليها حسابات المؤسسة", "اختبر الاستعادة من النسخ كل ثلاثة أشهر وقِس زمنها", "شفّر البيانات الحساسة عند النقل والتخزين", "أتلف الأجهزة والوسائط والورق إتلافاً آمناً"], "intro": ""}, {"name": "الأفراد", "items": ["درّب كل موظف جديد تدريباً تأهيلياً في أسبوعه الأول", "أرسل رسالة توعية قصيرة كل شهر بالعربية والإنجليزية", "تحقق بقناة ثانية من أي تغيير في بيانات مستفيد ومن أي طلب عاجل قبل تنفيذه", "وفّر قناة سهلة للإبلاغ عن الرسائل المشبوهة واشكر من يبلغ", "أجرِ محاكاة تصيد كل ربع سنة بأسلوب يبني الثقة ولا يهدمها", "وقّع مع كل موظف اتفاقية استخدام مقبول"], "intro": ""}, {"name": "الاستعداد والامتثال", "items": ["احتفظ بقائمة محدثة بجهات الاتصال في الطوارئ خارج الأنظمة", "اكتب خطة استجابة من صفحة واحدة تحدد من يقرر ومن يُتصل به", "حدّد الجهات التي يجب إبلاغها عند وقوع حادثة ومهلة الإبلاغ لكل منها", "اكتب خطة استمرارية بسيطة للخدمات الثلاث الأهم", "راجع كل سنة الموردين الذين يدخلون إلى أنظمة المؤسسة أو يحتفظون ببياناتها", "أدرج في عقود الموردين بنوداً أمنية تشمل الإبلاغ عن الحوادث", "أعدّ سجل مخاطر بسيطاً من عشرة سيناريوهات وراجعه كل ربع سنة", "أجرِ اختبار اختراق كل سنة للموقع والتطبيقات المتاحة على الإنترنت", "راجع إعدادات الخدمات السحابية وطابقها مع معيار المزود", "عيّن بالاسم مسؤولاً واحداً عن أمن المعلومات يتبع الإدارة العليا"], "intro": ""}], "questions": null}, "large": {"title": "قائمة تحقق للجهات الحكومية والمؤسسات الكبرى", "intro": "تملك الجهة الحكومية والمؤسسة الكبرى فريق أمن وميزانية وجهة تنظيمية تسألها كل عام، فالسؤال عندها ليس من أين تبدأ بل هل غطت كل ما تطلبه الأطر الوطنية فعلاً لا على الورق، وتجمع هذه القائمة في عشر مجموعات ثمانين ضابطاً مرتبة على ترتيب الضوابط الأساسية للأمن السيبراني في السعودية والضوابط الوطنية الأساسية في الكويت ومعيار ضمان المعلومات في قطر وأطر البنوك المركزية الخليجية، فتصلح أداة للمراجعة الذاتية قبل زيارة المدقق أو المنظم، وكُتب كل بند أمراً مباشراً يستطيع مسؤول الأمن أن يحيله إلى صاحبه ويطلب عليه دليلاً، وعنوان كل مجموعة يذكر الفصول التي تشرحها، وهي لا تغني عن أداة التقييم الرسمية للإطار الذي تخضع له الجهة بل تسبقها.", "groups": [{"name": "الحوكمة والقيادة، الفصلان الثالث والرابع", "items": ["اعتمد استراتيجية للأمن السيبراني من أعلى سلطة في الجهة واربطها بأهداف العمل وبالاستراتيجية الوطنية", "شكّل لجنة توجيهية للأمن السيبراني تضم الإدارات المعنية وتجتمع كل ربع سنة على الأقل بمحاضر موثقة", "عيّن مسؤولاً عن الأمن السيبراني يتبع الرئيس التنفيذي أو من في حكمه ولا يتبع إدارة تقنية المعلومات", "اعتمد سياسات الأمن السيبراني من الإدارة العليا وراجعها كل سنة وعند كل تغيير تنظيمي كبير", "وثّق أدوار الأمن السيبراني ومسؤولياته في كل إدارة واجعلها جزءاً من الوصف الوظيفي", "أدخل متطلبات الأمن في كل مشروع تقني من مرحلة الفكرة وفي كل طلب تغيير قبل اعتماده", "احتفظ بسجل للتشريعات والأطر التي تخضع لها الجهة مع حالة الالتزام بكل منها والدليل عليه", "ارفع إلى مجلس الإدارة أو السلطة العليا تقريراً كل ربع سنة بمؤشرات النتائج لا بأعداد الأنشطة"], "intro": ""}, {"name": "المخاطر والامتثال والتدقيق، الفصلان الثالث والرابع", "items": ["اعتمد منهجية لإدارة مخاطر الأمن السيبراني متسقة مع منهجية المخاطر المؤسسية", "احتفظ بسجل مخاطر على مستوى الجهة لكل خطر فيه مالك مسمى وخطة معالجة بتاريخ", "اعتمد شهية المخاطر من أعلى سلطة وعبّر عنها بحدود رقمية يُبلَّغ عند تجاوزها", "أجرِ تقييم المخاطر عند كل تغيير كبير وقبل إطلاق كل خدمة جديدة أو التعاقد مع مورد حرج", "أجرِ تدقيقاً داخلياً مستقلاً للأمن السيبراني كل سنة بفريق لا يتبع إدارة تقنية المعلومات", "راجع الالتزام بالإطار الوطني كل سنة بأدلة لكل ضابط لا بإقرارات عامة", "تابع ملاحظات التدقيق والمنظم في سجل واحد حتى إغلاقها وارفع المتأخر منها إلى اللجنة التوجيهية", "طبّق خطوط الدفاع الثلاثة فلا يكون من يشغّل الضوابط هو من يقيّمها"], "intro": ""}, {"name": "الأصول والهوية والصلاحيات، الفصلان الثالث والسادس", "items": ["أنشئ جرداً مركزياً آلياً للأجهزة والبرمجيات والبيانات والحسابات والخدمات السحابية ولكل أصل مالك مسمى", "صنّف الأصول والبيانات وفق إطار التصنيف الوطني ووسمها بتصنيفها", "فعّل المصادقة متعددة العوامل لكل دخول عن بعد ولكل حساب ذي صلاحيات حساسة ولكل خدمة سحابية", "أدر الحسابات ذات الصلاحيات الحساسة من خزنة مركزية تسجل الجلسات وتمنح الصلاحية مؤقتاً عند الحاجة", "راجع الصلاحيات كل ربع سنة بمصادقة مالك كل نظام واسحب ما لم يبقَ له مسوغ", "طبّق الفصل بين المهام في الأنظمة المالية والحرجة فلا ينشئ العملية ويعتمدها شخص واحد", "اجرد حسابات الخدمات التي تعمل بها التطبيقات وأدرها كما تُدار الحسابات الحساسة", "ألغِ صلاحيات المغادر والمنقول في اليوم نفسه آلياً من نظام الموارد البشرية", "وحّد الدخول من مزود هوية مركزي وامنع الهويات المحلية المتفرقة في الأنظمة", "اضبط معايير كلمات المرور على المعيار الوطني وامنع الكلمات المسربة المعروفة"], "intro": ""}, {"name": "الأنظمة ونقاط النهاية، الفصلان الثامن والثاني عشر", "items": ["اعتمد إعدادات أساسية آمنة لكل منصة واكشف الانحراف عنها بفحص آلي دوري", "اعتمد آجالاً للتحديثات الأمنية بحسب الخطورة وقِس نسبة الالتزام بها كل شهر", "ثبّت حل كشف نقاط النهاية والاستجابة على كل جهاز وخادم واربطه بمركز العمليات الأمنية", "اعزل المدير المحلي عن أجهزة المستخدمين وخصص محطات عمل للصلاحيات الحساسة", "شفّر أقراص الحواسيب المحمولة والهواتف وأدر الأجهزة المحمولة من منصة مركزية", "امنع تشغيل البرمجيات غير المعتمدة بقائمة سماح على الأنظمة الحرجة", "أزل الأنظمة التي انتهى دعم صانعها أو اعزلها بضوابط تعويضية موثقة", "سجّل الأحداث على مستوى النظام في كل خادم وأرسلها إلى المركز لا تحفظها محلياً فقط"], "intro": ""}, {"name": "الشبكات والتطبيقات، الفصول السابع والتاسع والثالث عشر", "items": ["قسّم الشبكة إلى مناطق بحسب الحساسية وضع ما يُتاح على الإنترنت في منطقة محايدة", "اضبط جدران الحماية على المنع افتراضياً وراجع قواعدها كل ستة أشهر واحذف ما لا مالك له", "أمّن البريد بسياسات مصادقة المرسل وترشيح المرفقات والروابط وتنبيه الرسائل الواردة من الخارج", "رشّح تصفح الويب واستعلامات أسماء النطاقات وامنع النطاقات الخبيثة والمسجلة حديثاً", "احمِ ما هو مكشوف للإنترنت من هجمات حجب الخدمة بخدمة مخصصة واختبرها", "امنع الاتصال غير المشفر داخل الشبكة وخارجها واستبدل البروتوكولات القديمة", "طبّق دورة تطوير آمنة تشمل نمذجة التهديدات والفحص الآلي للشفرة ومراجعتها قبل الإطلاق", "اختبر الاختراق لكل تطبيق قبل إطلاقه ولكل الأنظمة المتاحة على الإنترنت كل سنة", "ضع جدار حماية لتطبيقات الويب أمام كل تطبيق مكشوف ولا تجعله بديلاً عن إصلاح الثغرات", "اعتمد معمارية مرجعية وراجع معمارية كل مشروع جديد قبل البناء"], "intro": ""}, {"name": "البيانات والتشفير، الفصلان الخامس والحادي عشر", "items": ["اعتمد سياسة لحماية البيانات الشخصية وفق قانون الدولة وعيّن مسؤولاً عنها إذا أوجب القانون ذلك", "شفّر البيانات الحساسة عند النقل والتخزين بخوارزميات معتمدة وامنع ما انتهى عمره منها", "أدر مفاتيح التشفير من نظام مركزي واحفظ مفاتيح الأنظمة الحرجة في وحدة أمن عتاد", "طبّق منع تسريب البيانات على البريد والتخزين السحابي ونقاط النهاية للبيانات المصنفة", "احفظ البيانات التي يوجب القانون أو المنظم بقاءها داخل الدولة في مراكز داخل الدولة واحصل على الموافقة قبل أي نقل", "حدّد مدة الاحتفاظ لكل صنف من البيانات وأتلف ما انتهت مدته إتلافاً آمناً موثقاً", "راجع تطبيقات الذكاء الاصطناعي والخدمات الخارجية التي تصل إليها بيانات الجهة قبل اعتمادها"], "intro": ""}, {"name": "المراقبة والاستجابة، الفصول الرابع عشر والخامس عشر والثامن عشر", "items": ["شغّل مركز عمليات أمنية على مدار الساعة داخلياً أو بمزود خارجي بعقد يحدد زمن الاستجابة", "اجمع السجلات من كل المصادر الحرجة في نظام إدارة المعلومات والأحداث الأمنية واحتفظ بها اثني عشر شهراً على الأقل", "ابنِ حالات الاستخدام على أساليب المهاجمين المعروفة وقِس ما تغطيه منها كل ربع سنة", "اشترك في استخبارات التهديدات وتبادل المؤشرات مع المركز الوطني والقطاع", "اعتمد خطة للاستجابة للحوادث مع أدلة إجراءات لأشيع الحوادث وبطاقة للساعة الأولى", "حدّد مهل الإبلاغ للمنظم والمركز الوطني ومن يملك قرار الإبلاغ واختبر الوصول إليه خارج ساعات العمل", "أجرِ تمرين طاولة كل سنة بمشاركة الإدارة العليا ومسؤولي الاتصال والشؤون القانونية", "جهّز قدرة على التحقيق الرقمي داخلياً أو بعقد جاهز مع سلسلة حيازة موثقة للأدلة", "اصطد التهديدات دورياً في الأنظمة الحرجة ولا تنتظر التنبيهات وحدها", "قِس متوسط زمن الكشف ومتوسط زمن الاستجابة وارفعهما إلى اللجنة التوجيهية"], "intro": ""}, {"name": "الاستمرارية والصمود، الفصل السادس عشر", "items": ["أجرِ تحليل الأثر على الأعمال لكل خدمة حرجة مع مالكيها واعتمد هدف زمن التعافي وهدف نقطة التعافي لكل منها", "اعتمد خطة لاستمرارية الأعمال وخطة للتعافي من الكوارث واختبرهما كل سنة بتحويل فعلي لا بمراجعة على الورق", "احتفظ بنسخ احتياطية معزولة أو غير قابلة للتعديل للأنظمة الحرجة واختبر الاستعادة منها كل ربع سنة", "جهّز موقعاً بديلاً يناسب مدة التوقف التي تحتملها كل خدمة", "أجرِ تمرين أزمة سيبرانية كل سنة يشمل التواصل مع الجمهور والمنظم والإعلام", "راجع اعتماد الخدمات الحرجة على الموردين والمزودين السحابيين وضع بديلاً لكل اعتماد لا يُحتمل فقده"], "intro": ""}, {"name": "الأطراف الخارجية والحوسبة السحابية، الفصلان الثالث والعاشر", "items": ["احتفظ بسجل للموردين مصنفين بحسب حرجيتهم وما يصلون إليه من أنظمة وبيانات", "قيّم أمن المورد الحرج قبل التعاقد وكل سنة بأدلة لا باستبيان يعبئه بنفسه", "أدرج في العقود بنود الإبلاغ عن الحوادث خلال ساعات وحق التدقيق وبقاء البيانات داخل الدولة والإنهاء الآمن", "اجعل وصول الموردين عبر بوابة واحدة مسجلة بصلاحيات مؤقتة وبمصادقة متعددة العوامل", "راقب مخاطر التركز فلا تجعل خدماتك الحرجة كلها عند مزود واحد بلا بديل", "احصل على موافقة المنظم إذا كانت لازمة قبل نقل أي خدمة حرجة إلى السحابة", "افحص إعدادات الخدمات السحابية آلياً وأدر مفاتيح التشفير فيها بنفسك وحدّد مناطق التخزين داخل الدولة", "اكتب استراتيجية خروج لكل خدمة سحابية حرجة واطلب قائمة مكونات البرمجيات للأنظمة الحرجة"], "intro": ""}, {"name": "الأفراد والثقافة، الفصل السابع عشر", "items": ["أجرِ المسح الأمني قبل التعيين في الوظائف الحساسة وجدده عند الانتقال إليها", "درّب كل موظف عند التعيين وكل سنة ودرّب المطورين ومديري الأنظمة والقيادات تدريباً يخص عملهم", "أجرِ محاكاة التصيد كل ربع سنة وقِس نسبة الإبلاغ وسرعته لا نسبة من ضغط فقط", "عيّن أبطالاً للأمن في الإدارات ووفّر قناة إبلاغ سهلة واشكر من يبلغ علناً", "وقّع مع كل موظف ومورد اتفاقية سرية واستخدام مقبول وأبلغه بما يجب فعله عند المغادرة"], "intro": ""}], "questions": {"name": "عشرة أسئلة يطرحها مجلس الإدارة", "items": ["ما أهم خمسة مخاطر سيبرانية على الجهة ومن يملك كل واحد منها وماذا تغير فيها منذ آخر اجتماع؟", "ما نسبة الأنظمة الحرجة التي تصل سجلاتها إلى مركز العمليات الأمنية؟", "متى آخر مرة استعدنا فيها نظاماً حرجاً من النسخ الاحتياطية فعلاً وكم استغرقت الاستعادة؟", "كم متوسط زمن الكشف عن الهجوم ومتوسط زمن احتوائه في آخر ربع سنة؟", "ما حالة التزامنا بالإطار الوطني وأين الفجوات التي تحتاج إلى قرار من المجلس؟", "من يملك قرار الإبلاغ عن الحادثة إلى المنظم وهل جُرّب الوصول إليه في عطلة؟", "ما أهم عشرة موردين يصلون إلى أنظمتنا ومتى قُيّم أمنهم آخر مرة؟", "كم حساباً ذا صلاحيات حساسة لدينا ومن راجعها آخر مرة ومتى؟", "ماذا تعلمنا من آخر حادثة أو تمرين وما الذي تغير بسببه؟", "لو وقع علينا الهجوم الذي أصاب جهة مماثلة الشهر الماضي فماذا كان سيحدث عندنا؟"], "intro": "يستطيع عضو المجلس الذي لا يعرف التقنية أن يقيس حال الأمن في جهته بعشرة أسئلة لا تحتاج إلى مختص لفهم إجاباتها، فإذا لم تأتِ الإجابة رقماً أو تاريخاً أو اسماً فالأرجح أن الضابط غير موجود."}}};
+const ORDER = ["sme", "large"];
+const LABELS = {sme: "المؤسسة الصغيرة والمتوسطة", large: "الجهات الحكومية والمؤسسات الكبرى"};
+const tabs = document.getElementById("tabs"), panels = document.getElementById("panels");
+let store = {};
+try { store = JSON.parse(localStorage.getItem("gulfcyber-checklists") || "{}"); } catch (e) { store = {}; }
+function save(){ try { localStorage.setItem("gulfcyber-checklists", JSON.stringify(store)); } catch (e) {} }
+function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+ORDER.forEach((key, idx) => {
+  const list = DATA[key];
+  const btn = document.createElement("button");
+  btn.setAttribute("role", "tab"); btn.textContent = LABELS[key]; btn.dataset.key = key;
+  btn.setAttribute("aria-selected", idx === 0 ? "true" : "false");
+  btn.addEventListener("click", () => activate(key));
+  tabs.appendChild(btn);
+
+  const panel = document.createElement("section");
+  panel.className = "panel"; panel.dataset.key = key; panel.dataset.active = idx === 0 ? "true" : "false";
+  panel.setAttribute("role", "tabpanel"); panel.setAttribute("aria-label", list.title);
+  let n = 0;
+  let html = `<div class="bar"><div class="row"><div class="meter" aria-hidden="true"><i></i></div><div class="count" aria-live="polite"></div>
+    <div class="actions"><button type="button" data-act="print">طباعة</button><button type="button" data-act="export">تصدير ما بقي</button><button type="button" data-act="reset">إعادة الضبط</button></div></div></div>`;
+  html += `<div class="lead">${esc(list.intro)}</div>`;
+  list.groups.forEach(g => {
+    html += `<div class="group"><h2>${esc(g.name)}</h2><ol>`;
+    g.items.forEach(item => {
+      n += 1; const id = `${key}-${n}`; const done = !!(store[key] && store[key][n]);
+      html += `<li class="item${done ? " done" : ""}"><input type="checkbox" id="${id}" data-n="${n}"${done ? " checked" : ""}><label for="${id}"><span class="n">${n}.</span> <span class="t">${esc(item)}</span></label></li>`;
+    });
+    html += `</ol></div>`;
+  });
+  if (list.questions) {
+    html += `<div class="q"><h2>${esc(list.questions.name)}</h2><p>${esc(list.questions.intro)}</p><ol>`;
+    list.questions.items.forEach(q => { html += `<li>${esc(q)}</li>`; });
+    html += `</ol></div>`;
+  }
+  panel.innerHTML = html;
+  panel.dataset.total = n;
+  panels.appendChild(panel);
+
+  panel.addEventListener("change", e => {
+    if (e.target.type !== "checkbox") return;
+    store[key] = store[key] || {};
+    const i = e.target.dataset.n;
+    if (e.target.checked) store[key][i] = 1; else delete store[key][i];
+    e.target.closest(".item").classList.toggle("done", e.target.checked);
+    save(); update(panel);
+  });
+  panel.addEventListener("click", e => {
+    const act = e.target.dataset.act; if (!act) return;
+    if (act === "print") { activate(key); window.print(); }
+    if (act === "reset") { if (confirm("تُمسح العلامات كلها في هذه القائمة؟")) { store[key] = {}; save(); panel.querySelectorAll("input").forEach(c => { c.checked = false; c.closest(".item").classList.remove("done"); }); update(panel); } }
+    if (act === "export") {
+      const lines = [list.title, ""];
+      panel.querySelectorAll(".group").forEach(g => {
+        const left = [...g.querySelectorAll(".item")].filter(li => !li.querySelector("input").checked);
+        if (!left.length) return;
+        lines.push(g.querySelector("h2").textContent);
+        left.forEach(li => lines.push("[ ] " + li.querySelector(".n").textContent + " " + li.querySelector(".t").textContent));
+        lines.push("");
+      });
+      const blob = new Blob(["﻿" + lines.join("\n")], {type: "text/plain;charset=utf-8"});
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `checklist-${key}-remaining.txt`; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    }
+  });
+  update(panel);
+});
+
+function update(panel){
+  const total = Number(panel.dataset.total);
+  const done = panel.querySelectorAll("input:checked").length;
+  panel.querySelector(".meter i").style.width = (total ? Math.round(done / total * 100) : 0) + "%";
+  panel.querySelector(".count").textContent = `${done} من ${total} ضابطاً`;
+}
+function activate(key){
+  tabs.querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", b.dataset.key === key ? "true" : "false"));
+  panels.querySelectorAll(".panel").forEach(p => p.dataset.active = p.dataset.key === key ? "true" : "false");
+  try { history.replaceState(null, "", "#" + key); } catch (e) {}
+}
+if (location.hash === "#large") activate("large");
+</script>
+</body>
+</html>
