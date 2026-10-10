@@ -6,6 +6,19 @@
 <title>قوائم التحقق | المرجع الخليجي الشامل في الأمن السيبراني</title>
 <meta name="description" content="قائمتا تحقق من الكتاب تستخدمهما المؤسسة الصغيرة والمتوسطة والجهة الحكومية والمؤسسة الكبرى لمراجعة ضوابط الأمن السيبراني، بخانات تُحفظ في متصفحك وتُطبع وتُصدَّر.">
 <link rel="canonical" href="https://gulfcyber.3li.info/checklists/">
+<meta name="author" content="علي العنزي">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_KW">
+<meta property="og:site_name" content="المرجع الخليجي الشامل في الأمن السيبراني">
+<meta property="og:title" content="قوائم التحقق في الأمن السيبراني للمؤسسة الصغيرة والمتوسطة وللجهات الحكومية والمؤسسات الكبرى">
+<meta property="og:description" content="40 ضابطاً للمؤسسة الصغيرة والمتوسطة و80 ضابطاً للجهات الحكومية والمؤسسات الكبرى من ملاحق الكتاب، بخانات تُحفظ في متصفحك وتُطبع وتُصدَّر.">
+<meta property="og:url" content="https://gulfcyber.3li.info/checklists/">
+<meta property="og:image" content="https://gulfcyber.3li.info/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="قوائم التحقق في الأمن السيبراني من المرجع الخليجي الشامل">
+<meta name="twitter:description" content="40 ضابطاً للمؤسسة الصغيرة والمتوسطة و80 ضابطاً للجهات الحكومية والمؤسسات الكبرى، قوائم تُستخدم في الاجتماع لا تُقرأ فقط.">
+<meta name="twitter:image" content="https://gulfcyber.3li.info/assets/og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://gulfcyber.3li.info/checklists/#webpage","url":"https://gulfcyber.3li.info/checklists/","name":"قوائم التحقق | المرجع الخليجي الشامل في الأمن السيبراني","description":"قائمتا تحقق من ملاحق الكتاب، 40 ضابطاً للمؤسسة الصغيرة والمتوسطة و80 ضابطاً للجهات الحكومية والمؤسسات الكبرى، بخانات تُحفظ في المتصفح وتُطبع وتُصدَّر.","inLanguage":"ar","isPartOf":{"@id":"https://gulfcyber.3li.info/#website"},"about":{"@id":"https://gulfcyber.3li.info/#book"},"author":{"@type":"Person","name":"علي العنزي","alternateName":"Ali AlEnezi","url":"https://3li.info"},"isAccessibleForFree":true,"breadcrumb":{"@id":"https://gulfcyber.3li.info/checklists/#breadcrumb"},"hasPart":[{"@type":"ItemList","name":"قائمة تحقق للمؤسسة الصغيرة والمتوسطة","url":"https://gulfcyber.3li.info/checklists/#sme","numberOfItems":40},{"@type":"ItemList","name":"قائمة تحقق للجهات الحكومية والمؤسسات الكبرى","url":"https://gulfcyber.3li.info/checklists/#large","numberOfItems":80}]},{"@type":"BreadcrumbList","@id":"https://gulfcyber.3li.info/checklists/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"الكتاب","item":"https://gulfcyber.3li.info/"},{"@type":"ListItem","position":2,"name":"قوائم التحقق","item":"https://gulfcyber.3li.info/checklists/"}]}]}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E2A47'/%3E%3Ccircle cx='32' cy='30' r='14' fill='%23D4A72C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,10 +42,12 @@ header nav a.buy{background:var(--gold);color:var(--blue);font-weight:700;opacit
 .intro h1{font-size:clamp(26px,4vw,38px);color:var(--blue);margin:0 0 10px;line-height:1.35}
 .intro p{color:var(--muted);margin:0;max-width:720px}
 .tabs{display:flex;gap:8px;margin:26px 0 14px;flex-wrap:wrap}
-.tabs button{font:inherit;font-weight:600;font-size:15px;border:1.5px solid var(--blue);background:#fff;color:var(--blue);border-radius:999px;padding:9px 18px;cursor:pointer}
-.tabs button[aria-selected="true"]{background:var(--blue);color:#fff}
-.panel{display:none}
-.panel[data-active="true"]{display:block}
+.tabs a{font:inherit;font-weight:600;font-size:15px;border:1.5px solid var(--blue);background:#fff;color:var(--blue);border-radius:999px;padding:9px 18px;cursor:pointer;text-decoration:none}
+.tabs a[aria-selected="true"]{background:var(--blue);color:#fff}
+.list-title{font-size:22px;color:var(--blue);margin:6px 0 4px;line-height:1.4}
+.js .panel{display:none}
+.js .panel[data-active="true"]{display:block}
+.no-js .bar .actions,.no-js .meter,.no-js .count{display:none}
 .bar{position:sticky;top:64px;z-index:10;background:var(--cream);padding:12px 0 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
 .bar .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .meter{flex:1;min-width:200px;height:12px;background:#E8E2D4;border-radius:999px;overflow:hidden}
@@ -43,7 +58,7 @@ header nav a.buy{background:var(--gold);color:var(--blue);font-weight:700;opacit
 .actions button:hover{border-color:var(--blue)}
 .lead{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:14px 0 22px;color:#2B3647;font-size:16px}
 .group{margin:0 0 26px}
-.group h2{font-size:19px;color:var(--blue);margin:0 0 8px;padding-inline-start:12px;border-inline-start:4px solid var(--gold);line-height:1.5}
+.group h3{font-size:19px;color:var(--blue);margin:0 0 8px;padding-inline-start:12px;border-inline-start:4px solid var(--gold);line-height:1.5}
 .group ol{list-style:none;margin:0;padding:0;counter-reset:none}
 .item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;transition:background .2s}
 .item:hover{border-color:#C9BFA7}
@@ -53,7 +68,7 @@ header nav a.buy{background:var(--gold);color:var(--blue);font-weight:700;opacit
 .item label{cursor:pointer}
 .item .n{display:inline-block;min-width:30px;font-weight:700;color:var(--gold2);font-variant-numeric:tabular-nums}
 .q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:30px 0 40px}
-.q h2{color:var(--blue);font-size:20px;margin:0 0 6px}
+.q h3{color:var(--blue);font-size:20px;margin:0 0 6px}
 .q p{color:var(--muted);margin:0 0 12px;font-size:15px}
 .q ol{margin:0;padding-inline-start:22px}
 .q li{margin:6px 0}
@@ -94,8 +109,187 @@ footer a{color:var(--blue)}
     <p>القائمتان من ملاحق الكتاب كما هما، علّم على ما أنجزته فيُحفظ في متصفحك وحده، واطبعها لاجتماعك، أو صدّر ما بقي ليصير قائمة مهام لفريقك.</p>
   </section>
 
-  <div class="tabs" role="tablist" id="tabs"></div>
-  <div id="panels"></div>
+  <nav class="tabs" role="tablist" id="tabs" aria-label="القائمتان">
+    <a role="tab" id="tab-sme" href="#sme" data-key="sme" aria-selected="true" aria-controls="sme">المؤسسة الصغيرة والمتوسطة</a>
+    <a role="tab" id="tab-large" href="#large" data-key="large" aria-selected="false" aria-controls="large">الجهات الحكومية والمؤسسات الكبرى</a>
+  </nav>
+  <div id="panels">
+<section class="panel" id="sme" data-key="sme" data-active="true" role="tabpanel" aria-labelledby="tab-sme">
+<h2 class="list-title">قائمة تحقق للمؤسسة الصغيرة والمتوسطة</h2>
+<div class="bar"><div class="row"><div class="meter" aria-hidden="true"><i></i></div><div class="count" aria-live="polite"></div><div class="actions"><button type="button" data-act="print">طباعة</button><button type="button" data-act="export">تصدير ما بقي</button><button type="button" data-act="reset">إعادة الضبط</button></div></div></div>
+<div class="lead">لا تملك المؤسسة الصغيرة فريق أمن ولا ميزانية كبيرة، لكنها تملك ما يكفي لصد معظم الهجمات إذا طبقت الأساسيات، وتجمع هذه القائمة في ست مجموعات أربعين ضابطاً يمكن إنجاز معظمها في أشهر قليلة بأدوات متاحة، وكُتب كل بند فيها بصيغة أمر يسلمه المدير إلى فريقه كما هو، فتصلح نقطة بداية لمن يسأل من أين يبدأ وأداة تقييم ذاتي سريع لمن بدأ.</div>
+<div class="group"><h3>الهوية والحسابات</h3><ol>
+<li class="item"><input type="checkbox" id="sme-1" data-n="1"><label for="sme-1"><span class="n">1.</span> <span class="t">فعّل المصادقة متعددة العوامل للبريد ولكل دخول من خارج المؤسسة ولكل حساب إداري</span></label></li>
+<li class="item"><input type="checkbox" id="sme-2" data-n="2"><label for="sme-2"><span class="n">2.</span> <span class="t">استعمل كلمة مرور طويلة وفريدة لكل خدمة واحفظها في برنامج مخصص لإدارة كلمات المرور</span></label></li>
+<li class="item"><input type="checkbox" id="sme-3" data-n="3"><label for="sme-3"><span class="n">3.</span> <span class="t">لا تمنح أي مستخدم صلاحية مدير محلي على جهازه</span></label></li>
+<li class="item"><input type="checkbox" id="sme-4" data-n="4"><label for="sme-4"><span class="n">4.</span> <span class="t">أنشئ حساباً مستقلاً لكل موظف ولا تسمح بالحسابات المشتركة</span></label></li>
+<li class="item"><input type="checkbox" id="sme-5" data-n="5"><label for="sme-5"><span class="n">5.</span> <span class="t">عطّل حسابات المغادرين في يومهم الأخير</span></label></li>
+<li class="item"><input type="checkbox" id="sme-6" data-n="6"><label for="sme-6"><span class="n">6.</span> <span class="t">راجع الصلاحيات كل ستة أشهر واسحب ما لم يبقَ له مسوغ</span></label></li>
+</ol></div>
+<div class="group"><h3>الأجهزة والأنظمة</h3><ol>
+<li class="item"><input type="checkbox" id="sme-7" data-n="7"><label for="sme-7"><span class="n">7.</span> <span class="t">فعّل التحديثات التلقائية لأنظمة التشغيل والمتصفحات وسائر التطبيقات</span></label></li>
+<li class="item"><input type="checkbox" id="sme-8" data-n="8"><label for="sme-8"><span class="n">8.</span> <span class="t">ثبّت على كل جهاز وخادم حل حماية يراقب السلوك ولا يكتفي ببصمات الهجمات المعروفة</span></label></li>
+<li class="item"><input type="checkbox" id="sme-9" data-n="9"><label for="sme-9"><span class="n">9.</span> <span class="t">شفّر أقراص الحواسيب المحمولة والهواتف</span></label></li>
+<li class="item"><input type="checkbox" id="sme-10" data-n="10"><label for="sme-10"><span class="n">10.</span> <span class="t">أعدّ جرداً للأجهزة والبرمجيات والحسابات والخدمات السحابية وحدّثه عند كل تغيير</span></label></li>
+<li class="item"><input type="checkbox" id="sme-11" data-n="11"><label for="sme-11"><span class="n">11.</span> <span class="t">أزل البرمجيات والخدمات غير المستخدمة</span></label></li>
+<li class="item"><input type="checkbox" id="sme-12" data-n="12"><label for="sme-12"><span class="n">12.</span> <span class="t">اضبط قفل الشاشة تلقائياً واكتب سياسة لاستخدام الأجهزة الشخصية في العمل</span></label></li>
+</ol></div>
+<div class="group"><h3>الشبكة والوصول</h3><ol>
+<li class="item"><input type="checkbox" id="sme-13" data-n="13"><label for="sme-13"><span class="n">13.</span> <span class="t">اضبط جدار الحماية ليمنع كل اتصال لم يُسمح به صراحة</span></label></li>
+<li class="item"><input type="checkbox" id="sme-14" data-n="14"><label for="sme-14"><span class="n">14.</span> <span class="t">افصل شبكة الزوار والأجهزة الذكية عن شبكة العمل</span></label></li>
+<li class="item"><input type="checkbox" id="sme-15" data-n="15"><label for="sme-15"><span class="n">15.</span> <span class="t">أمّن الشبكة اللاسلكية بأحدث بروتوكول وكلمة مرور قوية وغيّرها عند مغادرة أي موظف</span></label></li>
+<li class="item"><input type="checkbox" id="sme-16" data-n="16"><label for="sme-16"><span class="n">16.</span> <span class="t">أغلق كل منفذ إدارة مكشوف للإنترنت</span></label></li>
+<li class="item"><input type="checkbox" id="sme-17" data-n="17"><label for="sme-17"><span class="n">17.</span> <span class="t">لا تسمح للموردين بالوصول عن بعد إلا عند الطلب وبمصادقة متعددة العوامل</span></label></li>
+<li class="item"><input type="checkbox" id="sme-18" data-n="18"><label for="sme-18"><span class="n">18.</span> <span class="t">رشّح استعلامات أسماء النطاقات لمنع الوصول إلى النطاقات الخبيثة</span></label></li>
+</ol></div>
+<div class="group"><h3>البيانات والنسخ الاحتياطي</h3><ol>
+<li class="item"><input type="checkbox" id="sme-19" data-n="19"><label for="sme-19"><span class="n">19.</span> <span class="t">صنّف البيانات في ثلاثة مستويات واعرف أين تُحفظ الحساسة منها</span></label></li>
+<li class="item"><input type="checkbox" id="sme-20" data-n="20"><label for="sme-20"><span class="n">20.</span> <span class="t">انسخ كل ما يهم احتياطياً كل يوم بقاعدة ثلاثة اثنان واحد، أي ثلاث نسخ على نوعين من الوسائط وواحدة خارج المبنى</span></label></li>
+<li class="item"><input type="checkbox" id="sme-21" data-n="21"><label for="sme-21"><span class="n">21.</span> <span class="t">احتفظ بنسخة معزولة أو غير قابلة للتعديل لا تصل إليها حسابات المؤسسة</span></label></li>
+<li class="item"><input type="checkbox" id="sme-22" data-n="22"><label for="sme-22"><span class="n">22.</span> <span class="t">اختبر الاستعادة من النسخ كل ثلاثة أشهر وقِس زمنها</span></label></li>
+<li class="item"><input type="checkbox" id="sme-23" data-n="23"><label for="sme-23"><span class="n">23.</span> <span class="t">شفّر البيانات الحساسة عند النقل والتخزين</span></label></li>
+<li class="item"><input type="checkbox" id="sme-24" data-n="24"><label for="sme-24"><span class="n">24.</span> <span class="t">أتلف الأجهزة والوسائط والورق إتلافاً آمناً</span></label></li>
+</ol></div>
+<div class="group"><h3>الأفراد</h3><ol>
+<li class="item"><input type="checkbox" id="sme-25" data-n="25"><label for="sme-25"><span class="n">25.</span> <span class="t">درّب كل موظف جديد تدريباً تأهيلياً في أسبوعه الأول</span></label></li>
+<li class="item"><input type="checkbox" id="sme-26" data-n="26"><label for="sme-26"><span class="n">26.</span> <span class="t">أرسل رسالة توعية قصيرة كل شهر بالعربية والإنجليزية</span></label></li>
+<li class="item"><input type="checkbox" id="sme-27" data-n="27"><label for="sme-27"><span class="n">27.</span> <span class="t">تحقق بقناة ثانية من أي تغيير في بيانات مستفيد ومن أي طلب عاجل قبل تنفيذه</span></label></li>
+<li class="item"><input type="checkbox" id="sme-28" data-n="28"><label for="sme-28"><span class="n">28.</span> <span class="t">وفّر قناة سهلة للإبلاغ عن الرسائل المشبوهة واشكر من يبلغ</span></label></li>
+<li class="item"><input type="checkbox" id="sme-29" data-n="29"><label for="sme-29"><span class="n">29.</span> <span class="t">أجرِ محاكاة تصيد كل ربع سنة بأسلوب يبني الثقة ولا يهدمها</span></label></li>
+<li class="item"><input type="checkbox" id="sme-30" data-n="30"><label for="sme-30"><span class="n">30.</span> <span class="t">وقّع مع كل موظف اتفاقية استخدام مقبول</span></label></li>
+</ol></div>
+<div class="group"><h3>الاستعداد والامتثال</h3><ol>
+<li class="item"><input type="checkbox" id="sme-31" data-n="31"><label for="sme-31"><span class="n">31.</span> <span class="t">احتفظ بقائمة محدثة بجهات الاتصال في الطوارئ خارج الأنظمة</span></label></li>
+<li class="item"><input type="checkbox" id="sme-32" data-n="32"><label for="sme-32"><span class="n">32.</span> <span class="t">اكتب خطة استجابة من صفحة واحدة تحدد من يقرر ومن يُتصل به</span></label></li>
+<li class="item"><input type="checkbox" id="sme-33" data-n="33"><label for="sme-33"><span class="n">33.</span> <span class="t">حدّد الجهات التي يجب إبلاغها عند وقوع حادثة ومهلة الإبلاغ لكل منها</span></label></li>
+<li class="item"><input type="checkbox" id="sme-34" data-n="34"><label for="sme-34"><span class="n">34.</span> <span class="t">اكتب خطة استمرارية بسيطة للخدمات الثلاث الأهم</span></label></li>
+<li class="item"><input type="checkbox" id="sme-35" data-n="35"><label for="sme-35"><span class="n">35.</span> <span class="t">راجع كل سنة الموردين الذين يدخلون إلى أنظمة المؤسسة أو يحتفظون ببياناتها</span></label></li>
+<li class="item"><input type="checkbox" id="sme-36" data-n="36"><label for="sme-36"><span class="n">36.</span> <span class="t">أدرج في عقود الموردين بنوداً أمنية تشمل الإبلاغ عن الحوادث</span></label></li>
+<li class="item"><input type="checkbox" id="sme-37" data-n="37"><label for="sme-37"><span class="n">37.</span> <span class="t">أعدّ سجل مخاطر بسيطاً من عشرة سيناريوهات وراجعه كل ربع سنة</span></label></li>
+<li class="item"><input type="checkbox" id="sme-38" data-n="38"><label for="sme-38"><span class="n">38.</span> <span class="t">أجرِ اختبار اختراق كل سنة للموقع والتطبيقات المتاحة على الإنترنت</span></label></li>
+<li class="item"><input type="checkbox" id="sme-39" data-n="39"><label for="sme-39"><span class="n">39.</span> <span class="t">راجع إعدادات الخدمات السحابية وطابقها مع معيار المزود</span></label></li>
+<li class="item"><input type="checkbox" id="sme-40" data-n="40"><label for="sme-40"><span class="n">40.</span> <span class="t">عيّن بالاسم مسؤولاً واحداً عن أمن المعلومات يتبع الإدارة العليا</span></label></li>
+</ol></div>
+</section>
+
+<section class="panel" id="large" data-key="large" data-active="false" role="tabpanel" aria-labelledby="tab-large">
+<h2 class="list-title">قائمة تحقق للجهات الحكومية والمؤسسات الكبرى</h2>
+<div class="bar"><div class="row"><div class="meter" aria-hidden="true"><i></i></div><div class="count" aria-live="polite"></div><div class="actions"><button type="button" data-act="print">طباعة</button><button type="button" data-act="export">تصدير ما بقي</button><button type="button" data-act="reset">إعادة الضبط</button></div></div></div>
+<div class="lead">تملك الجهة الحكومية والمؤسسة الكبرى فريق أمن وميزانية وجهة تنظيمية تسألها كل عام، فالسؤال عندها ليس من أين تبدأ بل هل غطت كل ما تطلبه الأطر الوطنية فعلاً لا على الورق، وتجمع هذه القائمة في عشر مجموعات ثمانين ضابطاً مرتبة على ترتيب الضوابط الأساسية للأمن السيبراني في السعودية والضوابط الوطنية الأساسية في الكويت ومعيار ضمان المعلومات في قطر وأطر البنوك المركزية الخليجية، فتصلح أداة للمراجعة الذاتية قبل زيارة المدقق أو المنظم، وكُتب كل بند أمراً مباشراً يستطيع مسؤول الأمن أن يحيله إلى صاحبه ويطلب عليه دليلاً، وعنوان كل مجموعة يذكر الفصول التي تشرحها، وهي لا تغني عن أداة التقييم الرسمية للإطار الذي تخضع له الجهة بل تسبقها.</div>
+<div class="group"><h3>الحوكمة والقيادة، الفصلان الثالث والرابع</h3><ol>
+<li class="item"><input type="checkbox" id="large-1" data-n="1"><label for="large-1"><span class="n">1.</span> <span class="t">اعتمد استراتيجية للأمن السيبراني من أعلى سلطة في الجهة واربطها بأهداف العمل وبالاستراتيجية الوطنية</span></label></li>
+<li class="item"><input type="checkbox" id="large-2" data-n="2"><label for="large-2"><span class="n">2.</span> <span class="t">شكّل لجنة توجيهية للأمن السيبراني تضم الإدارات المعنية وتجتمع كل ربع سنة على الأقل بمحاضر موثقة</span></label></li>
+<li class="item"><input type="checkbox" id="large-3" data-n="3"><label for="large-3"><span class="n">3.</span> <span class="t">عيّن مسؤولاً عن الأمن السيبراني يتبع الرئيس التنفيذي أو من في حكمه ولا يتبع إدارة تقنية المعلومات</span></label></li>
+<li class="item"><input type="checkbox" id="large-4" data-n="4"><label for="large-4"><span class="n">4.</span> <span class="t">اعتمد سياسات الأمن السيبراني من الإدارة العليا وراجعها كل سنة وعند كل تغيير تنظيمي كبير</span></label></li>
+<li class="item"><input type="checkbox" id="large-5" data-n="5"><label for="large-5"><span class="n">5.</span> <span class="t">وثّق أدوار الأمن السيبراني ومسؤولياته في كل إدارة واجعلها جزءاً من الوصف الوظيفي</span></label></li>
+<li class="item"><input type="checkbox" id="large-6" data-n="6"><label for="large-6"><span class="n">6.</span> <span class="t">أدخل متطلبات الأمن في كل مشروع تقني من مرحلة الفكرة وفي كل طلب تغيير قبل اعتماده</span></label></li>
+<li class="item"><input type="checkbox" id="large-7" data-n="7"><label for="large-7"><span class="n">7.</span> <span class="t">احتفظ بسجل للتشريعات والأطر التي تخضع لها الجهة مع حالة الالتزام بكل منها والدليل عليه</span></label></li>
+<li class="item"><input type="checkbox" id="large-8" data-n="8"><label for="large-8"><span class="n">8.</span> <span class="t">ارفع إلى مجلس الإدارة أو السلطة العليا تقريراً كل ربع سنة بمؤشرات النتائج لا بأعداد الأنشطة</span></label></li>
+</ol></div>
+<div class="group"><h3>المخاطر والامتثال والتدقيق، الفصلان الثالث والرابع</h3><ol>
+<li class="item"><input type="checkbox" id="large-9" data-n="9"><label for="large-9"><span class="n">9.</span> <span class="t">اعتمد منهجية لإدارة مخاطر الأمن السيبراني متسقة مع منهجية المخاطر المؤسسية</span></label></li>
+<li class="item"><input type="checkbox" id="large-10" data-n="10"><label for="large-10"><span class="n">10.</span> <span class="t">احتفظ بسجل مخاطر على مستوى الجهة لكل خطر فيه مالك مسمى وخطة معالجة بتاريخ</span></label></li>
+<li class="item"><input type="checkbox" id="large-11" data-n="11"><label for="large-11"><span class="n">11.</span> <span class="t">اعتمد شهية المخاطر من أعلى سلطة وعبّر عنها بحدود رقمية يُبلَّغ عند تجاوزها</span></label></li>
+<li class="item"><input type="checkbox" id="large-12" data-n="12"><label for="large-12"><span class="n">12.</span> <span class="t">أجرِ تقييم المخاطر عند كل تغيير كبير وقبل إطلاق كل خدمة جديدة أو التعاقد مع مورد حرج</span></label></li>
+<li class="item"><input type="checkbox" id="large-13" data-n="13"><label for="large-13"><span class="n">13.</span> <span class="t">أجرِ تدقيقاً داخلياً مستقلاً للأمن السيبراني كل سنة بفريق لا يتبع إدارة تقنية المعلومات</span></label></li>
+<li class="item"><input type="checkbox" id="large-14" data-n="14"><label for="large-14"><span class="n">14.</span> <span class="t">راجع الالتزام بالإطار الوطني كل سنة بأدلة لكل ضابط لا بإقرارات عامة</span></label></li>
+<li class="item"><input type="checkbox" id="large-15" data-n="15"><label for="large-15"><span class="n">15.</span> <span class="t">تابع ملاحظات التدقيق والمنظم في سجل واحد حتى إغلاقها وارفع المتأخر منها إلى اللجنة التوجيهية</span></label></li>
+<li class="item"><input type="checkbox" id="large-16" data-n="16"><label for="large-16"><span class="n">16.</span> <span class="t">طبّق خطوط الدفاع الثلاثة فلا يكون من يشغّل الضوابط هو من يقيّمها</span></label></li>
+</ol></div>
+<div class="group"><h3>الأصول والهوية والصلاحيات، الفصلان الثالث والسادس</h3><ol>
+<li class="item"><input type="checkbox" id="large-17" data-n="17"><label for="large-17"><span class="n">17.</span> <span class="t">أنشئ جرداً مركزياً آلياً للأجهزة والبرمجيات والبيانات والحسابات والخدمات السحابية ولكل أصل مالك مسمى</span></label></li>
+<li class="item"><input type="checkbox" id="large-18" data-n="18"><label for="large-18"><span class="n">18.</span> <span class="t">صنّف الأصول والبيانات وفق إطار التصنيف الوطني ووسمها بتصنيفها</span></label></li>
+<li class="item"><input type="checkbox" id="large-19" data-n="19"><label for="large-19"><span class="n">19.</span> <span class="t">فعّل المصادقة متعددة العوامل لكل دخول عن بعد ولكل حساب ذي صلاحيات حساسة ولكل خدمة سحابية</span></label></li>
+<li class="item"><input type="checkbox" id="large-20" data-n="20"><label for="large-20"><span class="n">20.</span> <span class="t">أدر الحسابات ذات الصلاحيات الحساسة من خزنة مركزية تسجل الجلسات وتمنح الصلاحية مؤقتاً عند الحاجة</span></label></li>
+<li class="item"><input type="checkbox" id="large-21" data-n="21"><label for="large-21"><span class="n">21.</span> <span class="t">راجع الصلاحيات كل ربع سنة بمصادقة مالك كل نظام واسحب ما لم يبقَ له مسوغ</span></label></li>
+<li class="item"><input type="checkbox" id="large-22" data-n="22"><label for="large-22"><span class="n">22.</span> <span class="t">طبّق الفصل بين المهام في الأنظمة المالية والحرجة فلا ينشئ العملية ويعتمدها شخص واحد</span></label></li>
+<li class="item"><input type="checkbox" id="large-23" data-n="23"><label for="large-23"><span class="n">23.</span> <span class="t">اجرد حسابات الخدمات التي تعمل بها التطبيقات وأدرها كما تُدار الحسابات الحساسة</span></label></li>
+<li class="item"><input type="checkbox" id="large-24" data-n="24"><label for="large-24"><span class="n">24.</span> <span class="t">ألغِ صلاحيات المغادر والمنقول في اليوم نفسه آلياً من نظام الموارد البشرية</span></label></li>
+<li class="item"><input type="checkbox" id="large-25" data-n="25"><label for="large-25"><span class="n">25.</span> <span class="t">وحّد الدخول من مزود هوية مركزي وامنع الهويات المحلية المتفرقة في الأنظمة</span></label></li>
+<li class="item"><input type="checkbox" id="large-26" data-n="26"><label for="large-26"><span class="n">26.</span> <span class="t">اضبط معايير كلمات المرور على المعيار الوطني وامنع الكلمات المسربة المعروفة</span></label></li>
+</ol></div>
+<div class="group"><h3>الأنظمة ونقاط النهاية، الفصلان الثامن والثاني عشر</h3><ol>
+<li class="item"><input type="checkbox" id="large-27" data-n="27"><label for="large-27"><span class="n">27.</span> <span class="t">اعتمد إعدادات أساسية آمنة لكل منصة واكشف الانحراف عنها بفحص آلي دوري</span></label></li>
+<li class="item"><input type="checkbox" id="large-28" data-n="28"><label for="large-28"><span class="n">28.</span> <span class="t">اعتمد آجالاً للتحديثات الأمنية بحسب الخطورة وقِس نسبة الالتزام بها كل شهر</span></label></li>
+<li class="item"><input type="checkbox" id="large-29" data-n="29"><label for="large-29"><span class="n">29.</span> <span class="t">ثبّت حل كشف نقاط النهاية والاستجابة على كل جهاز وخادم واربطه بمركز العمليات الأمنية</span></label></li>
+<li class="item"><input type="checkbox" id="large-30" data-n="30"><label for="large-30"><span class="n">30.</span> <span class="t">اعزل المدير المحلي عن أجهزة المستخدمين وخصص محطات عمل للصلاحيات الحساسة</span></label></li>
+<li class="item"><input type="checkbox" id="large-31" data-n="31"><label for="large-31"><span class="n">31.</span> <span class="t">شفّر أقراص الحواسيب المحمولة والهواتف وأدر الأجهزة المحمولة من منصة مركزية</span></label></li>
+<li class="item"><input type="checkbox" id="large-32" data-n="32"><label for="large-32"><span class="n">32.</span> <span class="t">امنع تشغيل البرمجيات غير المعتمدة بقائمة سماح على الأنظمة الحرجة</span></label></li>
+<li class="item"><input type="checkbox" id="large-33" data-n="33"><label for="large-33"><span class="n">33.</span> <span class="t">أزل الأنظمة التي انتهى دعم صانعها أو اعزلها بضوابط تعويضية موثقة</span></label></li>
+<li class="item"><input type="checkbox" id="large-34" data-n="34"><label for="large-34"><span class="n">34.</span> <span class="t">سجّل الأحداث على مستوى النظام في كل خادم وأرسلها إلى المركز لا تحفظها محلياً فقط</span></label></li>
+</ol></div>
+<div class="group"><h3>الشبكات والتطبيقات، الفصول السابع والتاسع والثالث عشر</h3><ol>
+<li class="item"><input type="checkbox" id="large-35" data-n="35"><label for="large-35"><span class="n">35.</span> <span class="t">قسّم الشبكة إلى مناطق بحسب الحساسية وضع ما يُتاح على الإنترنت في منطقة محايدة</span></label></li>
+<li class="item"><input type="checkbox" id="large-36" data-n="36"><label for="large-36"><span class="n">36.</span> <span class="t">اضبط جدران الحماية على المنع افتراضياً وراجع قواعدها كل ستة أشهر واحذف ما لا مالك له</span></label></li>
+<li class="item"><input type="checkbox" id="large-37" data-n="37"><label for="large-37"><span class="n">37.</span> <span class="t">أمّن البريد بسياسات مصادقة المرسل وترشيح المرفقات والروابط وتنبيه الرسائل الواردة من الخارج</span></label></li>
+<li class="item"><input type="checkbox" id="large-38" data-n="38"><label for="large-38"><span class="n">38.</span> <span class="t">رشّح تصفح الويب واستعلامات أسماء النطاقات وامنع النطاقات الخبيثة والمسجلة حديثاً</span></label></li>
+<li class="item"><input type="checkbox" id="large-39" data-n="39"><label for="large-39"><span class="n">39.</span> <span class="t">احمِ ما هو مكشوف للإنترنت من هجمات حجب الخدمة بخدمة مخصصة واختبرها</span></label></li>
+<li class="item"><input type="checkbox" id="large-40" data-n="40"><label for="large-40"><span class="n">40.</span> <span class="t">امنع الاتصال غير المشفر داخل الشبكة وخارجها واستبدل البروتوكولات القديمة</span></label></li>
+<li class="item"><input type="checkbox" id="large-41" data-n="41"><label for="large-41"><span class="n">41.</span> <span class="t">طبّق دورة تطوير آمنة تشمل نمذجة التهديدات والفحص الآلي للشفرة ومراجعتها قبل الإطلاق</span></label></li>
+<li class="item"><input type="checkbox" id="large-42" data-n="42"><label for="large-42"><span class="n">42.</span> <span class="t">اختبر الاختراق لكل تطبيق قبل إطلاقه ولكل الأنظمة المتاحة على الإنترنت كل سنة</span></label></li>
+<li class="item"><input type="checkbox" id="large-43" data-n="43"><label for="large-43"><span class="n">43.</span> <span class="t">ضع جدار حماية لتطبيقات الويب أمام كل تطبيق مكشوف ولا تجعله بديلاً عن إصلاح الثغرات</span></label></li>
+<li class="item"><input type="checkbox" id="large-44" data-n="44"><label for="large-44"><span class="n">44.</span> <span class="t">اعتمد معمارية مرجعية وراجع معمارية كل مشروع جديد قبل البناء</span></label></li>
+</ol></div>
+<div class="group"><h3>البيانات والتشفير، الفصلان الخامس والحادي عشر</h3><ol>
+<li class="item"><input type="checkbox" id="large-45" data-n="45"><label for="large-45"><span class="n">45.</span> <span class="t">اعتمد سياسة لحماية البيانات الشخصية وفق قانون الدولة وعيّن مسؤولاً عنها إذا أوجب القانون ذلك</span></label></li>
+<li class="item"><input type="checkbox" id="large-46" data-n="46"><label for="large-46"><span class="n">46.</span> <span class="t">شفّر البيانات الحساسة عند النقل والتخزين بخوارزميات معتمدة وامنع ما انتهى عمره منها</span></label></li>
+<li class="item"><input type="checkbox" id="large-47" data-n="47"><label for="large-47"><span class="n">47.</span> <span class="t">أدر مفاتيح التشفير من نظام مركزي واحفظ مفاتيح الأنظمة الحرجة في وحدة أمن عتاد</span></label></li>
+<li class="item"><input type="checkbox" id="large-48" data-n="48"><label for="large-48"><span class="n">48.</span> <span class="t">طبّق منع تسريب البيانات على البريد والتخزين السحابي ونقاط النهاية للبيانات المصنفة</span></label></li>
+<li class="item"><input type="checkbox" id="large-49" data-n="49"><label for="large-49"><span class="n">49.</span> <span class="t">احفظ البيانات التي يوجب القانون أو المنظم بقاءها داخل الدولة في مراكز داخل الدولة واحصل على الموافقة قبل أي نقل</span></label></li>
+<li class="item"><input type="checkbox" id="large-50" data-n="50"><label for="large-50"><span class="n">50.</span> <span class="t">حدّد مدة الاحتفاظ لكل صنف من البيانات وأتلف ما انتهت مدته إتلافاً آمناً موثقاً</span></label></li>
+<li class="item"><input type="checkbox" id="large-51" data-n="51"><label for="large-51"><span class="n">51.</span> <span class="t">راجع تطبيقات الذكاء الاصطناعي والخدمات الخارجية التي تصل إليها بيانات الجهة قبل اعتمادها</span></label></li>
+</ol></div>
+<div class="group"><h3>المراقبة والاستجابة، الفصول الرابع عشر والخامس عشر والثامن عشر</h3><ol>
+<li class="item"><input type="checkbox" id="large-52" data-n="52"><label for="large-52"><span class="n">52.</span> <span class="t">شغّل مركز عمليات أمنية على مدار الساعة داخلياً أو بمزود خارجي بعقد يحدد زمن الاستجابة</span></label></li>
+<li class="item"><input type="checkbox" id="large-53" data-n="53"><label for="large-53"><span class="n">53.</span> <span class="t">اجمع السجلات من كل المصادر الحرجة في نظام إدارة المعلومات والأحداث الأمنية واحتفظ بها اثني عشر شهراً على الأقل</span></label></li>
+<li class="item"><input type="checkbox" id="large-54" data-n="54"><label for="large-54"><span class="n">54.</span> <span class="t">ابنِ حالات الاستخدام على أساليب المهاجمين المعروفة وقِس ما تغطيه منها كل ربع سنة</span></label></li>
+<li class="item"><input type="checkbox" id="large-55" data-n="55"><label for="large-55"><span class="n">55.</span> <span class="t">اشترك في استخبارات التهديدات وتبادل المؤشرات مع المركز الوطني والقطاع</span></label></li>
+<li class="item"><input type="checkbox" id="large-56" data-n="56"><label for="large-56"><span class="n">56.</span> <span class="t">اعتمد خطة للاستجابة للحوادث مع أدلة إجراءات لأشيع الحوادث وبطاقة للساعة الأولى</span></label></li>
+<li class="item"><input type="checkbox" id="large-57" data-n="57"><label for="large-57"><span class="n">57.</span> <span class="t">حدّد مهل الإبلاغ للمنظم والمركز الوطني ومن يملك قرار الإبلاغ واختبر الوصول إليه خارج ساعات العمل</span></label></li>
+<li class="item"><input type="checkbox" id="large-58" data-n="58"><label for="large-58"><span class="n">58.</span> <span class="t">أجرِ تمرين طاولة كل سنة بمشاركة الإدارة العليا ومسؤولي الاتصال والشؤون القانونية</span></label></li>
+<li class="item"><input type="checkbox" id="large-59" data-n="59"><label for="large-59"><span class="n">59.</span> <span class="t">جهّز قدرة على التحقيق الرقمي داخلياً أو بعقد جاهز مع سلسلة حيازة موثقة للأدلة</span></label></li>
+<li class="item"><input type="checkbox" id="large-60" data-n="60"><label for="large-60"><span class="n">60.</span> <span class="t">اصطد التهديدات دورياً في الأنظمة الحرجة ولا تنتظر التنبيهات وحدها</span></label></li>
+<li class="item"><input type="checkbox" id="large-61" data-n="61"><label for="large-61"><span class="n">61.</span> <span class="t">قِس متوسط زمن الكشف ومتوسط زمن الاستجابة وارفعهما إلى اللجنة التوجيهية</span></label></li>
+</ol></div>
+<div class="group"><h3>الاستمرارية والصمود، الفصل السادس عشر</h3><ol>
+<li class="item"><input type="checkbox" id="large-62" data-n="62"><label for="large-62"><span class="n">62.</span> <span class="t">أجرِ تحليل الأثر على الأعمال لكل خدمة حرجة مع مالكيها واعتمد هدف زمن التعافي وهدف نقطة التعافي لكل منها</span></label></li>
+<li class="item"><input type="checkbox" id="large-63" data-n="63"><label for="large-63"><span class="n">63.</span> <span class="t">اعتمد خطة لاستمرارية الأعمال وخطة للتعافي من الكوارث واختبرهما كل سنة بتحويل فعلي لا بمراجعة على الورق</span></label></li>
+<li class="item"><input type="checkbox" id="large-64" data-n="64"><label for="large-64"><span class="n">64.</span> <span class="t">احتفظ بنسخ احتياطية معزولة أو غير قابلة للتعديل للأنظمة الحرجة واختبر الاستعادة منها كل ربع سنة</span></label></li>
+<li class="item"><input type="checkbox" id="large-65" data-n="65"><label for="large-65"><span class="n">65.</span> <span class="t">جهّز موقعاً بديلاً يناسب مدة التوقف التي تحتملها كل خدمة</span></label></li>
+<li class="item"><input type="checkbox" id="large-66" data-n="66"><label for="large-66"><span class="n">66.</span> <span class="t">أجرِ تمرين أزمة سيبرانية كل سنة يشمل التواصل مع الجمهور والمنظم والإعلام</span></label></li>
+<li class="item"><input type="checkbox" id="large-67" data-n="67"><label for="large-67"><span class="n">67.</span> <span class="t">راجع اعتماد الخدمات الحرجة على الموردين والمزودين السحابيين وضع بديلاً لكل اعتماد لا يُحتمل فقده</span></label></li>
+</ol></div>
+<div class="group"><h3>الأطراف الخارجية والحوسبة السحابية، الفصلان الثالث والعاشر</h3><ol>
+<li class="item"><input type="checkbox" id="large-68" data-n="68"><label for="large-68"><span class="n">68.</span> <span class="t">احتفظ بسجل للموردين مصنفين بحسب حرجيتهم وما يصلون إليه من أنظمة وبيانات</span></label></li>
+<li class="item"><input type="checkbox" id="large-69" data-n="69"><label for="large-69"><span class="n">69.</span> <span class="t">قيّم أمن المورد الحرج قبل التعاقد وكل سنة بأدلة لا باستبيان يعبئه بنفسه</span></label></li>
+<li class="item"><input type="checkbox" id="large-70" data-n="70"><label for="large-70"><span class="n">70.</span> <span class="t">أدرج في العقود بنود الإبلاغ عن الحوادث خلال ساعات وحق التدقيق وبقاء البيانات داخل الدولة والإنهاء الآمن</span></label></li>
+<li class="item"><input type="checkbox" id="large-71" data-n="71"><label for="large-71"><span class="n">71.</span> <span class="t">اجعل وصول الموردين عبر بوابة واحدة مسجلة بصلاحيات مؤقتة وبمصادقة متعددة العوامل</span></label></li>
+<li class="item"><input type="checkbox" id="large-72" data-n="72"><label for="large-72"><span class="n">72.</span> <span class="t">راقب مخاطر التركز فلا تجعل خدماتك الحرجة كلها عند مزود واحد بلا بديل</span></label></li>
+<li class="item"><input type="checkbox" id="large-73" data-n="73"><label for="large-73"><span class="n">73.</span> <span class="t">احصل على موافقة المنظم إذا كانت لازمة قبل نقل أي خدمة حرجة إلى السحابة</span></label></li>
+<li class="item"><input type="checkbox" id="large-74" data-n="74"><label for="large-74"><span class="n">74.</span> <span class="t">افحص إعدادات الخدمات السحابية آلياً وأدر مفاتيح التشفير فيها بنفسك وحدّد مناطق التخزين داخل الدولة</span></label></li>
+<li class="item"><input type="checkbox" id="large-75" data-n="75"><label for="large-75"><span class="n">75.</span> <span class="t">اكتب استراتيجية خروج لكل خدمة سحابية حرجة واطلب قائمة مكونات البرمجيات للأنظمة الحرجة</span></label></li>
+</ol></div>
+<div class="group"><h3>الأفراد والثقافة، الفصل السابع عشر</h3><ol>
+<li class="item"><input type="checkbox" id="large-76" data-n="76"><label for="large-76"><span class="n">76.</span> <span class="t">أجرِ المسح الأمني قبل التعيين في الوظائف الحساسة وجدده عند الانتقال إليها</span></label></li>
+<li class="item"><input type="checkbox" id="large-77" data-n="77"><label for="large-77"><span class="n">77.</span> <span class="t">درّب كل موظف عند التعيين وكل سنة ودرّب المطورين ومديري الأنظمة والقيادات تدريباً يخص عملهم</span></label></li>
+<li class="item"><input type="checkbox" id="large-78" data-n="78"><label for="large-78"><span class="n">78.</span> <span class="t">أجرِ محاكاة التصيد كل ربع سنة وقِس نسبة الإبلاغ وسرعته لا نسبة من ضغط فقط</span></label></li>
+<li class="item"><input type="checkbox" id="large-79" data-n="79"><label for="large-79"><span class="n">79.</span> <span class="t">عيّن أبطالاً للأمن في الإدارات ووفّر قناة إبلاغ سهلة واشكر من يبلغ علناً</span></label></li>
+<li class="item"><input type="checkbox" id="large-80" data-n="80"><label for="large-80"><span class="n">80.</span> <span class="t">وقّع مع كل موظف ومورد اتفاقية سرية واستخدام مقبول وأبلغه بما يجب فعله عند المغادرة</span></label></li>
+</ol></div>
+<div class="q"><h3>عشرة أسئلة يطرحها مجلس الإدارة</h3><p>يستطيع عضو المجلس الذي لا يعرف التقنية أن يقيس حال الأمن في جهته بعشرة أسئلة لا تحتاج إلى مختص لفهم إجاباتها، فإذا لم تأتِ الإجابة رقماً أو تاريخاً أو اسماً فالأرجح أن الضابط غير موجود.</p><ol>
+<li>ما أهم خمسة مخاطر سيبرانية على الجهة ومن يملك كل واحد منها وماذا تغير فيها منذ آخر اجتماع؟</li>
+<li>ما نسبة الأنظمة الحرجة التي تصل سجلاتها إلى مركز العمليات الأمنية؟</li>
+<li>متى آخر مرة استعدنا فيها نظاماً حرجاً من النسخ الاحتياطية فعلاً وكم استغرقت الاستعادة؟</li>
+<li>كم متوسط زمن الكشف عن الهجوم ومتوسط زمن احتوائه في آخر ربع سنة؟</li>
+<li>ما حالة التزامنا بالإطار الوطني وأين الفجوات التي تحتاج إلى قرار من المجلس؟</li>
+<li>من يملك قرار الإبلاغ عن الحادثة إلى المنظم وهل جُرّب الوصول إليه في عطلة؟</li>
+<li>ما أهم عشرة موردين يصلون إلى أنظمتنا ومتى قُيّم أمنهم آخر مرة؟</li>
+<li>كم حساباً ذا صلاحيات حساسة لدينا ومن راجعها آخر مرة ومتى؟</li>
+<li>ماذا تعلمنا من آخر حادثة أو تمرين وما الذي تغير بسببه؟</li>
+<li>لو وقع علينا الهجوم الذي أصاب جهة مماثلة الشهر الماضي فماذا كان سيحدث عندنا؟</li>
+</ol></div>
+</section>
+  </div>
 </main>
 
 <footer>
@@ -106,47 +300,21 @@ footer a{color:var(--blue)}
 </footer>
 
 <script>
-const DATA = {"sme": {"title": "قائمة تحقق للمؤسسة الصغيرة والمتوسطة", "intro": "لا تملك المؤسسة الصغيرة فريق أمن ولا ميزانية كبيرة، لكنها تملك ما يكفي لصد معظم الهجمات إذا طبقت الأساسيات، وتجمع هذه القائمة في ست مجموعات أربعين ضابطاً يمكن إنجاز معظمها في أشهر قليلة بأدوات متاحة، وكُتب كل بند فيها بصيغة أمر يسلمه المدير إلى فريقه كما هو، فتصلح نقطة بداية لمن يسأل من أين يبدأ وأداة تقييم ذاتي سريع لمن بدأ.", "groups": [{"name": "الهوية والحسابات", "items": ["فعّل المصادقة متعددة العوامل للبريد ولكل دخول من خارج المؤسسة ولكل حساب إداري", "استعمل كلمة مرور طويلة وفريدة لكل خدمة واحفظها في برنامج مخصص لإدارة كلمات المرور", "لا تمنح أي مستخدم صلاحية مدير محلي على جهازه", "أنشئ حساباً مستقلاً لكل موظف ولا تسمح بالحسابات المشتركة", "عطّل حسابات المغادرين في يومهم الأخير", "راجع الصلاحيات كل ستة أشهر واسحب ما لم يبقَ له مسوغ"], "intro": ""}, {"name": "الأجهزة والأنظمة", "items": ["فعّل التحديثات التلقائية لأنظمة التشغيل والمتصفحات وسائر التطبيقات", "ثبّت على كل جهاز وخادم حل حماية يراقب السلوك ولا يكتفي ببصمات الهجمات المعروفة", "شفّر أقراص الحواسيب المحمولة والهواتف", "أعدّ جرداً للأجهزة والبرمجيات والحسابات والخدمات السحابية وحدّثه عند كل تغيير", "أزل البرمجيات والخدمات غير المستخدمة", "اضبط قفل الشاشة تلقائياً واكتب سياسة لاستخدام الأجهزة الشخصية في العمل"], "intro": ""}, {"name": "الشبكة والوصول", "items": ["اضبط جدار الحماية ليمنع كل اتصال لم يُسمح به صراحة", "افصل شبكة الزوار والأجهزة الذكية عن شبكة العمل", "أمّن الشبكة اللاسلكية بأحدث بروتوكول وكلمة مرور قوية وغيّرها عند مغادرة أي موظف", "أغلق كل منفذ إدارة مكشوف للإنترنت", "لا تسمح للموردين بالوصول عن بعد إلا عند الطلب وبمصادقة متعددة العوامل", "رشّح استعلامات أسماء النطاقات لمنع الوصول إلى النطاقات الخبيثة"], "intro": ""}, {"name": "البيانات والنسخ الاحتياطي", "items": ["صنّف البيانات في ثلاثة مستويات واعرف أين تُحفظ الحساسة منها", "انسخ كل ما يهم احتياطياً كل يوم بقاعدة ثلاثة اثنان واحد، أي ثلاث نسخ على نوعين من الوسائط وواحدة خارج المبنى", "احتفظ بنسخة معزولة أو غير قابلة للتعديل لا تصل إليها حسابات المؤسسة", "اختبر الاستعادة من النسخ كل ثلاثة أشهر وقِس زمنها", "شفّر البيانات الحساسة عند النقل والتخزين", "أتلف الأجهزة والوسائط والورق إتلافاً آمناً"], "intro": ""}, {"name": "الأفراد", "items": ["درّب كل موظف جديد تدريباً تأهيلياً في أسبوعه الأول", "أرسل رسالة توعية قصيرة كل شهر بالعربية والإنجليزية", "تحقق بقناة ثانية من أي تغيير في بيانات مستفيد ومن أي طلب عاجل قبل تنفيذه", "وفّر قناة سهلة للإبلاغ عن الرسائل المشبوهة واشكر من يبلغ", "أجرِ محاكاة تصيد كل ربع سنة بأسلوب يبني الثقة ولا يهدمها", "وقّع مع كل موظف اتفاقية استخدام مقبول"], "intro": ""}, {"name": "الاستعداد والامتثال", "items": ["احتفظ بقائمة محدثة بجهات الاتصال في الطوارئ خارج الأنظمة", "اكتب خطة استجابة من صفحة واحدة تحدد من يقرر ومن يُتصل به", "حدّد الجهات التي يجب إبلاغها عند وقوع حادثة ومهلة الإبلاغ لكل منها", "اكتب خطة استمرارية بسيطة للخدمات الثلاث الأهم", "راجع كل سنة الموردين الذين يدخلون إلى أنظمة المؤسسة أو يحتفظون ببياناتها", "أدرج في عقود الموردين بنوداً أمنية تشمل الإبلاغ عن الحوادث", "أعدّ سجل مخاطر بسيطاً من عشرة سيناريوهات وراجعه كل ربع سنة", "أجرِ اختبار اختراق كل سنة للموقع والتطبيقات المتاحة على الإنترنت", "راجع إعدادات الخدمات السحابية وطابقها مع معيار المزود", "عيّن بالاسم مسؤولاً واحداً عن أمن المعلومات يتبع الإدارة العليا"], "intro": ""}], "questions": null}, "large": {"title": "قائمة تحقق للجهات الحكومية والمؤسسات الكبرى", "intro": "تملك الجهة الحكومية والمؤسسة الكبرى فريق أمن وميزانية وجهة تنظيمية تسألها كل عام، فالسؤال عندها ليس من أين تبدأ بل هل غطت كل ما تطلبه الأطر الوطنية فعلاً لا على الورق، وتجمع هذه القائمة في عشر مجموعات ثمانين ضابطاً مرتبة على ترتيب الضوابط الأساسية للأمن السيبراني في السعودية والضوابط الوطنية الأساسية في الكويت ومعيار ضمان المعلومات في قطر وأطر البنوك المركزية الخليجية، فتصلح أداة للمراجعة الذاتية قبل زيارة المدقق أو المنظم، وكُتب كل بند أمراً مباشراً يستطيع مسؤول الأمن أن يحيله إلى صاحبه ويطلب عليه دليلاً، وعنوان كل مجموعة يذكر الفصول التي تشرحها، وهي لا تغني عن أداة التقييم الرسمية للإطار الذي تخضع له الجهة بل تسبقها.", "groups": [{"name": "الحوكمة والقيادة، الفصلان الثالث والرابع", "items": ["اعتمد استراتيجية للأمن السيبراني من أعلى سلطة في الجهة واربطها بأهداف العمل وبالاستراتيجية الوطنية", "شكّل لجنة توجيهية للأمن السيبراني تضم الإدارات المعنية وتجتمع كل ربع سنة على الأقل بمحاضر موثقة", "عيّن مسؤولاً عن الأمن السيبراني يتبع الرئيس التنفيذي أو من في حكمه ولا يتبع إدارة تقنية المعلومات", "اعتمد سياسات الأمن السيبراني من الإدارة العليا وراجعها كل سنة وعند كل تغيير تنظيمي كبير", "وثّق أدوار الأمن السيبراني ومسؤولياته في كل إدارة واجعلها جزءاً من الوصف الوظيفي", "أدخل متطلبات الأمن في كل مشروع تقني من مرحلة الفكرة وفي كل طلب تغيير قبل اعتماده", "احتفظ بسجل للتشريعات والأطر التي تخضع لها الجهة مع حالة الالتزام بكل منها والدليل عليه", "ارفع إلى مجلس الإدارة أو السلطة العليا تقريراً كل ربع سنة بمؤشرات النتائج لا بأعداد الأنشطة"], "intro": ""}, {"name": "المخاطر والامتثال والتدقيق، الفصلان الثالث والرابع", "items": ["اعتمد منهجية لإدارة مخاطر الأمن السيبراني متسقة مع منهجية المخاطر المؤسسية", "احتفظ بسجل مخاطر على مستوى الجهة لكل خطر فيه مالك مسمى وخطة معالجة بتاريخ", "اعتمد شهية المخاطر من أعلى سلطة وعبّر عنها بحدود رقمية يُبلَّغ عند تجاوزها", "أجرِ تقييم المخاطر عند كل تغيير كبير وقبل إطلاق كل خدمة جديدة أو التعاقد مع مورد حرج", "أجرِ تدقيقاً داخلياً مستقلاً للأمن السيبراني كل سنة بفريق لا يتبع إدارة تقنية المعلومات", "راجع الالتزام بالإطار الوطني كل سنة بأدلة لكل ضابط لا بإقرارات عامة", "تابع ملاحظات التدقيق والمنظم في سجل واحد حتى إغلاقها وارفع المتأخر منها إلى اللجنة التوجيهية", "طبّق خطوط الدفاع الثلاثة فلا يكون من يشغّل الضوابط هو من يقيّمها"], "intro": ""}, {"name": "الأصول والهوية والصلاحيات، الفصلان الثالث والسادس", "items": ["أنشئ جرداً مركزياً آلياً للأجهزة والبرمجيات والبيانات والحسابات والخدمات السحابية ولكل أصل مالك مسمى", "صنّف الأصول والبيانات وفق إطار التصنيف الوطني ووسمها بتصنيفها", "فعّل المصادقة متعددة العوامل لكل دخول عن بعد ولكل حساب ذي صلاحيات حساسة ولكل خدمة سحابية", "أدر الحسابات ذات الصلاحيات الحساسة من خزنة مركزية تسجل الجلسات وتمنح الصلاحية مؤقتاً عند الحاجة", "راجع الصلاحيات كل ربع سنة بمصادقة مالك كل نظام واسحب ما لم يبقَ له مسوغ", "طبّق الفصل بين المهام في الأنظمة المالية والحرجة فلا ينشئ العملية ويعتمدها شخص واحد", "اجرد حسابات الخدمات التي تعمل بها التطبيقات وأدرها كما تُدار الحسابات الحساسة", "ألغِ صلاحيات المغادر والمنقول في اليوم نفسه آلياً من نظام الموارد البشرية", "وحّد الدخول من مزود هوية مركزي وامنع الهويات المحلية المتفرقة في الأنظمة", "اضبط معايير كلمات المرور على المعيار الوطني وامنع الكلمات المسربة المعروفة"], "intro": ""}, {"name": "الأنظمة ونقاط النهاية، الفصلان الثامن والثاني عشر", "items": ["اعتمد إعدادات أساسية آمنة لكل منصة واكشف الانحراف عنها بفحص آلي دوري", "اعتمد آجالاً للتحديثات الأمنية بحسب الخطورة وقِس نسبة الالتزام بها كل شهر", "ثبّت حل كشف نقاط النهاية والاستجابة على كل جهاز وخادم واربطه بمركز العمليات الأمنية", "اعزل المدير المحلي عن أجهزة المستخدمين وخصص محطات عمل للصلاحيات الحساسة", "شفّر أقراص الحواسيب المحمولة والهواتف وأدر الأجهزة المحمولة من منصة مركزية", "امنع تشغيل البرمجيات غير المعتمدة بقائمة سماح على الأنظمة الحرجة", "أزل الأنظمة التي انتهى دعم صانعها أو اعزلها بضوابط تعويضية موثقة", "سجّل الأحداث على مستوى النظام في كل خادم وأرسلها إلى المركز لا تحفظها محلياً فقط"], "intro": ""}, {"name": "الشبكات والتطبيقات، الفصول السابع والتاسع والثالث عشر", "items": ["قسّم الشبكة إلى مناطق بحسب الحساسية وضع ما يُتاح على الإنترنت في منطقة محايدة", "اضبط جدران الحماية على المنع افتراضياً وراجع قواعدها كل ستة أشهر واحذف ما لا مالك له", "أمّن البريد بسياسات مصادقة المرسل وترشيح المرفقات والروابط وتنبيه الرسائل الواردة من الخارج", "رشّح تصفح الويب واستعلامات أسماء النطاقات وامنع النطاقات الخبيثة والمسجلة حديثاً", "احمِ ما هو مكشوف للإنترنت من هجمات حجب الخدمة بخدمة مخصصة واختبرها", "امنع الاتصال غير المشفر داخل الشبكة وخارجها واستبدل البروتوكولات القديمة", "طبّق دورة تطوير آمنة تشمل نمذجة التهديدات والفحص الآلي للشفرة ومراجعتها قبل الإطلاق", "اختبر الاختراق لكل تطبيق قبل إطلاقه ولكل الأنظمة المتاحة على الإنترنت كل سنة", "ضع جدار حماية لتطبيقات الويب أمام كل تطبيق مكشوف ولا تجعله بديلاً عن إصلاح الثغرات", "اعتمد معمارية مرجعية وراجع معمارية كل مشروع جديد قبل البناء"], "intro": ""}, {"name": "البيانات والتشفير، الفصلان الخامس والحادي عشر", "items": ["اعتمد سياسة لحماية البيانات الشخصية وفق قانون الدولة وعيّن مسؤولاً عنها إذا أوجب القانون ذلك", "شفّر البيانات الحساسة عند النقل والتخزين بخوارزميات معتمدة وامنع ما انتهى عمره منها", "أدر مفاتيح التشفير من نظام مركزي واحفظ مفاتيح الأنظمة الحرجة في وحدة أمن عتاد", "طبّق منع تسريب البيانات على البريد والتخزين السحابي ونقاط النهاية للبيانات المصنفة", "احفظ البيانات التي يوجب القانون أو المنظم بقاءها داخل الدولة في مراكز داخل الدولة واحصل على الموافقة قبل أي نقل", "حدّد مدة الاحتفاظ لكل صنف من البيانات وأتلف ما انتهت مدته إتلافاً آمناً موثقاً", "راجع تطبيقات الذكاء الاصطناعي والخدمات الخارجية التي تصل إليها بيانات الجهة قبل اعتمادها"], "intro": ""}, {"name": "المراقبة والاستجابة، الفصول الرابع عشر والخامس عشر والثامن عشر", "items": ["شغّل مركز عمليات أمنية على مدار الساعة داخلياً أو بمزود خارجي بعقد يحدد زمن الاستجابة", "اجمع السجلات من كل المصادر الحرجة في نظام إدارة المعلومات والأحداث الأمنية واحتفظ بها اثني عشر شهراً على الأقل", "ابنِ حالات الاستخدام على أساليب المهاجمين المعروفة وقِس ما تغطيه منها كل ربع سنة", "اشترك في استخبارات التهديدات وتبادل المؤشرات مع المركز الوطني والقطاع", "اعتمد خطة للاستجابة للحوادث مع أدلة إجراءات لأشيع الحوادث وبطاقة للساعة الأولى", "حدّد مهل الإبلاغ للمنظم والمركز الوطني ومن يملك قرار الإبلاغ واختبر الوصول إليه خارج ساعات العمل", "أجرِ تمرين طاولة كل سنة بمشاركة الإدارة العليا ومسؤولي الاتصال والشؤون القانونية", "جهّز قدرة على التحقيق الرقمي داخلياً أو بعقد جاهز مع سلسلة حيازة موثقة للأدلة", "اصطد التهديدات دورياً في الأنظمة الحرجة ولا تنتظر التنبيهات وحدها", "قِس متوسط زمن الكشف ومتوسط زمن الاستجابة وارفعهما إلى اللجنة التوجيهية"], "intro": ""}, {"name": "الاستمرارية والصمود، الفصل السادس عشر", "items": ["أجرِ تحليل الأثر على الأعمال لكل خدمة حرجة مع مالكيها واعتمد هدف زمن التعافي وهدف نقطة التعافي لكل منها", "اعتمد خطة لاستمرارية الأعمال وخطة للتعافي من الكوارث واختبرهما كل سنة بتحويل فعلي لا بمراجعة على الورق", "احتفظ بنسخ احتياطية معزولة أو غير قابلة للتعديل للأنظمة الحرجة واختبر الاستعادة منها كل ربع سنة", "جهّز موقعاً بديلاً يناسب مدة التوقف التي تحتملها كل خدمة", "أجرِ تمرين أزمة سيبرانية كل سنة يشمل التواصل مع الجمهور والمنظم والإعلام", "راجع اعتماد الخدمات الحرجة على الموردين والمزودين السحابيين وضع بديلاً لكل اعتماد لا يُحتمل فقده"], "intro": ""}, {"name": "الأطراف الخارجية والحوسبة السحابية، الفصلان الثالث والعاشر", "items": ["احتفظ بسجل للموردين مصنفين بحسب حرجيتهم وما يصلون إليه من أنظمة وبيانات", "قيّم أمن المورد الحرج قبل التعاقد وكل سنة بأدلة لا باستبيان يعبئه بنفسه", "أدرج في العقود بنود الإبلاغ عن الحوادث خلال ساعات وحق التدقيق وبقاء البيانات داخل الدولة والإنهاء الآمن", "اجعل وصول الموردين عبر بوابة واحدة مسجلة بصلاحيات مؤقتة وبمصادقة متعددة العوامل", "راقب مخاطر التركز فلا تجعل خدماتك الحرجة كلها عند مزود واحد بلا بديل", "احصل على موافقة المنظم إذا كانت لازمة قبل نقل أي خدمة حرجة إلى السحابة", "افحص إعدادات الخدمات السحابية آلياً وأدر مفاتيح التشفير فيها بنفسك وحدّد مناطق التخزين داخل الدولة", "اكتب استراتيجية خروج لكل خدمة سحابية حرجة واطلب قائمة مكونات البرمجيات للأنظمة الحرجة"], "intro": ""}, {"name": "الأفراد والثقافة، الفصل السابع عشر", "items": ["أجرِ المسح الأمني قبل التعيين في الوظائف الحساسة وجدده عند الانتقال إليها", "درّب كل موظف عند التعيين وكل سنة ودرّب المطورين ومديري الأنظمة والقيادات تدريباً يخص عملهم", "أجرِ محاكاة التصيد كل ربع سنة وقِس نسبة الإبلاغ وسرعته لا نسبة من ضغط فقط", "عيّن أبطالاً للأمن في الإدارات ووفّر قناة إبلاغ سهلة واشكر من يبلغ علناً", "وقّع مع كل موظف ومورد اتفاقية سرية واستخدام مقبول وأبلغه بما يجب فعله عند المغادرة"], "intro": ""}], "questions": {"name": "عشرة أسئلة يطرحها مجلس الإدارة", "items": ["ما أهم خمسة مخاطر سيبرانية على الجهة ومن يملك كل واحد منها وماذا تغير فيها منذ آخر اجتماع؟", "ما نسبة الأنظمة الحرجة التي تصل سجلاتها إلى مركز العمليات الأمنية؟", "متى آخر مرة استعدنا فيها نظاماً حرجاً من النسخ الاحتياطية فعلاً وكم استغرقت الاستعادة؟", "كم متوسط زمن الكشف عن الهجوم ومتوسط زمن احتوائه في آخر ربع سنة؟", "ما حالة التزامنا بالإطار الوطني وأين الفجوات التي تحتاج إلى قرار من المجلس؟", "من يملك قرار الإبلاغ عن الحادثة إلى المنظم وهل جُرّب الوصول إليه في عطلة؟", "ما أهم عشرة موردين يصلون إلى أنظمتنا ومتى قُيّم أمنهم آخر مرة؟", "كم حساباً ذا صلاحيات حساسة لدينا ومن راجعها آخر مرة ومتى؟", "ماذا تعلمنا من آخر حادثة أو تمرين وما الذي تغير بسببه؟", "لو وقع علينا الهجوم الذي أصاب جهة مماثلة الشهر الماضي فماذا كان سيحدث عندنا؟"], "intro": "يستطيع عضو المجلس الذي لا يعرف التقنية أن يقيس حال الأمن في جهته بعشرة أسئلة لا تحتاج إلى مختص لفهم إجاباتها، فإذا لم تأتِ الإجابة رقماً أو تاريخاً أو اسماً فالأرجح أن الضابط غير موجود."}}};
-const ORDER = ["sme", "large"];
-const LABELS = {sme: "المؤسسة الصغيرة والمتوسطة", large: "الجهات الحكومية والمؤسسات الكبرى"};
+document.documentElement.classList.add("js");
 const tabs = document.getElementById("tabs"), panels = document.getElementById("panels");
 let store = {};
 try { store = JSON.parse(localStorage.getItem("gulfcyber-checklists") || "{}"); } catch (e) { store = {}; }
 function save(){ try { localStorage.setItem("gulfcyber-checklists", JSON.stringify(store)); } catch (e) {} }
-function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
 
-ORDER.forEach((key, idx) => {
-  const list = DATA[key];
-  const btn = document.createElement("button");
-  btn.setAttribute("role", "tab"); btn.textContent = LABELS[key]; btn.dataset.key = key;
-  btn.setAttribute("aria-selected", idx === 0 ? "true" : "false");
-  btn.addEventListener("click", () => activate(key));
-  tabs.appendChild(btn);
-
-  const panel = document.createElement("section");
-  panel.className = "panel"; panel.dataset.key = key; panel.dataset.active = idx === 0 ? "true" : "false";
-  panel.setAttribute("role", "tabpanel"); panel.setAttribute("aria-label", list.title);
-  let n = 0;
-  let html = `<div class="bar"><div class="row"><div class="meter" aria-hidden="true"><i></i></div><div class="count" aria-live="polite"></div>
-    <div class="actions"><button type="button" data-act="print">طباعة</button><button type="button" data-act="export">تصدير ما بقي</button><button type="button" data-act="reset">إعادة الضبط</button></div></div></div>`;
-  html += `<div class="lead">${esc(list.intro)}</div>`;
-  list.groups.forEach(g => {
-    html += `<div class="group"><h2>${esc(g.name)}</h2><ol>`;
-    g.items.forEach(item => {
-      n += 1; const id = `${key}-${n}`; const done = !!(store[key] && store[key][n]);
-      html += `<li class="item${done ? " done" : ""}"><input type="checkbox" id="${id}" data-n="${n}"${done ? " checked" : ""}><label for="${id}"><span class="n">${n}.</span> <span class="t">${esc(item)}</span></label></li>`;
-    });
-    html += `</ol></div>`;
+panels.querySelectorAll(".panel").forEach(panel => {
+  const key = panel.dataset.key;
+  const title = panel.querySelector(".list-title").textContent;
+  const boxes = panel.querySelectorAll("input[type=checkbox]");
+  panel.dataset.total = boxes.length;
+  boxes.forEach(c => {
+    const done = !!(store[key] && store[key][c.dataset.n]);
+    c.checked = done; c.closest(".item").classList.toggle("done", done);
   });
-  if (list.questions) {
-    html += `<div class="q"><h2>${esc(list.questions.name)}</h2><p>${esc(list.questions.intro)}</p><ol>`;
-    list.questions.items.forEach(q => { html += `<li>${esc(q)}</li>`; });
-    html += `</ol></div>`;
-  }
-  panel.innerHTML = html;
-  panel.dataset.total = n;
-  panels.appendChild(panel);
-
   panel.addEventListener("change", e => {
     if (e.target.type !== "checkbox") return;
     store[key] = store[key] || {};
@@ -158,17 +326,17 @@ ORDER.forEach((key, idx) => {
   panel.addEventListener("click", e => {
     const act = e.target.dataset.act; if (!act) return;
     if (act === "print") { activate(key); window.print(); }
-    if (act === "reset") { if (confirm("تُمسح العلامات كلها في هذه القائمة؟")) { store[key] = {}; save(); panel.querySelectorAll("input").forEach(c => { c.checked = false; c.closest(".item").classList.remove("done"); }); update(panel); } }
+    if (act === "reset") { if (confirm("تُمسح العلامات كلها في هذه القائمة؟")) { store[key] = {}; save(); boxes.forEach(c => { c.checked = false; c.closest(".item").classList.remove("done"); }); update(panel); } }
     if (act === "export") {
-      const lines = [list.title, ""];
+      const lines = [title, ""];
       panel.querySelectorAll(".group").forEach(g => {
         const left = [...g.querySelectorAll(".item")].filter(li => !li.querySelector("input").checked);
         if (!left.length) return;
-        lines.push(g.querySelector("h2").textContent);
+        lines.push(g.querySelector("h3").textContent);
         left.forEach(li => lines.push("[ ] " + li.querySelector(".n").textContent + " " + li.querySelector(".t").textContent));
         lines.push("");
       });
-      const blob = new Blob(["﻿" + lines.join("\n")], {type: "text/plain;charset=utf-8"});
+      const blob = new Blob(["\ufeff" + lines.join("\n")], {type: "text/plain;charset=utf-8"});
       const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `checklist-${key}-remaining.txt`; a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 1000);
     }
@@ -183,10 +351,15 @@ function update(panel){
   panel.querySelector(".count").textContent = `${done} من ${total} ضابطاً`;
 }
 function activate(key){
-  tabs.querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", b.dataset.key === key ? "true" : "false"));
+  tabs.querySelectorAll("a").forEach(b => b.setAttribute("aria-selected", b.dataset.key === key ? "true" : "false"));
   panels.querySelectorAll(".panel").forEach(p => p.dataset.active = p.dataset.key === key ? "true" : "false");
-  try { history.replaceState(null, "", "#" + key); } catch (e) {}
 }
+tabs.addEventListener("click", e => {
+  const a = e.target.closest("a[data-key]"); if (!a) return;
+  e.preventDefault(); activate(a.dataset.key);
+  try { history.replaceState(null, "", "#" + a.dataset.key); } catch (err) {}
+  window.scrollTo({top: 0, behavior: "smooth"});
+});
 if (location.hash === "#large") activate("large");
 </script>
 </body>
