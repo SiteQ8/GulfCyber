@@ -6,6 +6,8 @@
 <title>المرجع الخليجي الشامل في الأمن السيبراني | كتاب من الخليج إلى الخليج</title>
 <meta name="description" content="كتاب عربي شامل في أمن المعلومات والأمن السيبراني للجامعات والجهات الحكومية والممارسين في دول الخليج، يضم أهداف تعلم وأشكالاً وتمارين وخرائط إلى الأطر الخليجية والدولية.">
 <link rel="canonical" href="https://gulfcyber.3li.info/">
+<link rel="preload" as="image" href="assets/hero-phone.webp" media="(max-width: 860px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width: 861px)">
 <meta property="og:type" content="book">
 <meta property="og:title" content="المرجع الخليجي الشامل في الأمن السيبراني">
 <meta property="og:description" content="الأسس والضوابط والعمليات والتنظيم، كتاب من الخليج إلى الخليج للجامعات والحكومات والممارسين.">
@@ -160,6 +162,8 @@ footer a{color:var(--gold);text-decoration:none}
 .mobile-bar .gold{background:var(--gold);color:var(--blue)}
 .mobile-bar .sec{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28)}
 
+@keyframes hero-drift{from{transform:scale(1)}to{transform:scale(1.07)}}
+@media (prefers-reduced-motion: reduce){.hero::before{animation:none}}
 @media (max-width:1100px){
   .head{grid-template-columns:270px minmax(0,1fr) auto;gap:16px 28px}
   .head h2{font-size:29px}
@@ -186,9 +190,14 @@ footer a{color:var(--gold);text-decoration:none}
   .hero p{font-size:17px;margin:0 auto}
   .pill{margin-bottom:12px}
   .cta{flex-direction:column;align-items:stretch;gap:10px}
-  .hero{background-image:url(assets/hero-960.webp);background-position:33% center}
-  .hero-bg{object-position:33% center}
-  .hero-shade{background:linear-gradient(to bottom,rgba(7,22,40,.70) 0%,rgba(7,22,40,.82) 55%,rgba(14,42,71,1) 100%)}
+  /* على الهاتف: صورة طولية واضحة للمحمل الخليجي وحبل الغيص بدل الفيديو العرضي المقصوص، تتحرك ببطء */
+  .hero{background:#0E2A47;min-height:100svh}
+  .hero::before{content:"";position:absolute;top:-4%;left:-4%;right:-4%;height:104svh;background:url(assets/hero-phone.webp) center top/cover no-repeat;animation:hero-drift 30s ease-in-out infinite alternate;transform-origin:50% 20%;pointer-events:none}
+  .hero-bg{display:none}
+  .hero-shade{background:linear-gradient(to bottom,rgba(7,22,40,.04) 0,rgba(7,22,40,.1) 22svh,rgba(7,22,40,.52) 36svh,rgba(7,22,40,.84) 50svh,#0E2A47 64svh,#0E2A47 100%)}
+  .hero .wrap{padding-top:clamp(240px,36svh,420px)}
+  .hero h1{text-shadow:0 2px 18px rgba(0,0,0,.45)}
+  .hero p{text-shadow:0 1px 10px rgba(0,0,0,.5)}
   .book3d{padding:8px 0 24px}
   .book{--w:210px;--h:336px;--t:24px;transform:rotateY(16deg) rotateX(3deg)}
   .book3d:hover .book{transform:rotateY(10deg) rotateX(2deg)}
@@ -208,6 +217,7 @@ footer a{color:var(--gold);text-decoration:none}
   .mobile-bar{display:flex}
 }
 @media (max-width:600px){
+  nav{flex-wrap:wrap;overflow:visible;row-gap:0}
   .grid4,.toc{grid-template-columns:1fr}
   .toc .part:nth-child(n){grid-column:auto;grid-row:auto}
   .head .btn{justify-self:stretch}
@@ -448,8 +458,9 @@ footer a{color:var(--gold);text-decoration:none}
   if(!v)return;
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var save=navigator.connection&&navigator.connection.saveData;
-  if(reduce||save){v.remove();return;}
-  var base=window.matchMedia('(min-width: 861px)').matches?'assets/hero':'assets/hero-sm';
+  var wide=window.matchMedia('(min-width: 861px)').matches;
+  if(reduce||save||!wide){v.remove();return;}
+  var base='assets/hero';
   [['webm','video/webm; codecs="vp9"'],['mp4','video/mp4']].forEach(function(t){var s=document.createElement('source');s.src=base+'.'+t[0];s.type=t[1];v.appendChild(s);});
   v.muted=true;v.load();
   var p=v.play();if(p&&p.catch)p.catch(function(){});
