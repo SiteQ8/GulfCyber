@@ -236,20 +236,21 @@ footer a{color:var(--gold);text-decoration:none}
 .ald{position:relative;z-index:21;background:linear-gradient(90deg,#F6F1E4,#FBF7EC 50%,#F6F1E4);color:#0E2A47;border-bottom:1px solid #E3D3A4;font-size:14.5px;line-height:1.6}
 .ald[hidden]{display:none}
 .ald .wrap{display:flex;align-items:center;justify-content:center;gap:12px;min-height:44px;padding-top:6px;padding-bottom:6px}
-.ald .mark{flex:none;width:30px;height:30px;border-radius:50%;background:#0E2A47;color:#D4A72C;display:grid;place-items:center;font-family:"Amiri",serif;font-size:19px;font-weight:700;line-height:1}
+.ald .mark{flex:none;width:30px;height:30px;border-radius:50%;background:#0E2A47;color:#D4A72C;display:grid;place-items:center}
+.ald .mark svg{width:70%;height:70%;display:block}
 .ald p{margin:0;text-align:center}
 .ald b{color:#7A5A10}
 .ald .when{display:inline-block;margin-inline-start:6px;padding:1px 10px;border-radius:999px;background:#0E2A47;color:#fff;font-size:13px;font-weight:600;white-space:nowrap}
 .ald a.more{flex:none;color:#0E2A47;font-weight:700;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#D4A72C;white-space:nowrap}
 .ald .x{flex:none;width:30px;height:30px;border:0;border-radius:50%;background:transparent;color:#5B6678;font-size:20px;line-height:1;cursor:pointer}
 .ald .x:hover{background:rgba(14,42,71,.08);color:#0E2A47}
-@media (max-width:640px){.ald{font-size:13.5px}.ald .wrap{gap:8px;padding-inline:12px}.ald .mark{display:none}.ald .ald-long{display:none}.ald .when{margin-inline-start:4px}}
+@media (max-width:640px){.ald{font-size:13.5px}.ald .wrap{gap:8px;padding-inline:12px}.ald .mark{width:26px;height:26px}.ald .ald-long{display:none}.ald .when{margin-inline-start:4px}}
 </style>
 </head>
 <body>
 <aside class="ald" id="ald" aria-label="اليوم العالمي للغة العربية" hidden>
   <div class="wrap">
-    <span class="mark" aria-hidden="true">ض</span>
+    <span class="mark" aria-hidden="true"><svg viewBox="-26.879821428571432 -698.3542532467533 1269.2730357142857 1029.9569913419914" aria-hidden="true"><path transform="scale(1,-1)" fill="currentColor" d="M1039 408Q1117 410 1152 310Q1162 281 1137 231Q1114 184 1098 167Q1020 81 830 66Q719 57 629 75Q608 -78 563 -125Q459 -232 299 -243Q188 -251 129 -199Q48 -128 63 -5Q75 90 120 165Q131 183 139.0 195.0Q147 207 151 212Q160 223 170 217Q181 211 170 192Q119 94 130 12Q146 -110 308 -110Q429 -110 521 -48Q571 -15 580 9Q571 92 525 152Q511 169 518 184L556 278Q568 308 589 273L624 214Q655 197 737 194Q804 271 894 339Q984 406 1039 408ZM1085 246Q1035 284 958 269Q882 254 793 191Q996 189 1085 246ZM799 605Q805 613 816 610Q836 603 854.5 592.0Q873 581 889 567Q897 559 892 549L844 473Q837 463 826 471Q816 479 754 516Q743 523 750 533Z"/></svg></span>
     <p><b>18 ديسمبر اليوم العالمي للغة العربية</b><span class="ald-long">، يوم أُدخلت العربية لغة رسمية في الأمم المتحدة عام 1973، وهذا الكتاب كُتب بها من أول سطر إلى آخره</span> <span class="when" id="aldWhen"></span></p>
     <a class="more" href="https://www.un.org/ar/observances/arabiclanguageday" target="_blank" rel="noopener">عن اليوم</a>
     <button class="x" type="button" id="aldClose" aria-label="إغلاق الشريط">×</button>
